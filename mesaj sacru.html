@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesaj Sacru - Camping Indian Nucșoara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Georgia', serif; /* Am folosit Georgia pentru un aspect de poveste */
+      background-color: white;
+      padding-top: 80px; /* Spațiu pentru navbar */
+      min-width: 671px; /* Păstrează layout-ul fix */
+    }
+    
+    h1,h2 {
+      font-family: 'Lobster', cursive;
+      text-align: center;
+      font-size: 3.2em;
+      color: black;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .sacred-text-container {
+      max-width: 700px;
+      margin: 40px auto; /* Centrează containerul */
+      padding: 20px;
+      text-align: left; /* Aliniere stânga pentru lizibilitate */
+    }
+
+    .sacred-text-container p {
+      font-size: 1.15em;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 22px; /* Spațiu între paragrafe */
+    }
+
+    /* --- Stilurile pentru Navbar și Limbi (identice cu celelalte pagini) --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #f3f3f3;
+      padding: 12px 90px 12px 8px;
+      border-bottom-right-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .navbar::-webkit-scrollbar { display: none; }
+    .menu { display: flex; gap: 4px; font-size: 1em; font-weight: bold; align-items: flex-end; white-space: nowrap; }
+    .menu a { text-decoration: none; color: #555; font-family: Georgia, serif; padding: 0 8px; }
+    .sub-text { font-size: 0.7em; font-weight: normal; margin-left: 2px; }
+    .language-interface { position: fixed; top: 0; right: 0; z-index: 2000; }
+    .globe-icon-container { position: fixed; top: 10px; right: 10px; z-index: 2100; pointer-events: auto; }
+    .globe-icon { width: 60px; cursor: pointer; }
+    .language-flags { position: absolute; top: 0; right: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; width: 160px; height: 160px; }
+    .language-flags.visible { pointer-events: auto; }
+    .language-flags img { width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3); cursor: pointer; position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; opacity: 0; transform: scale(0.5); }
+    .language-flags.visible img { opacity: 1; transform: scale(1); }
+    .language-flags.visible #flag-it { top: 10px; left: 10px; }
+    .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+    .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+  </style>
+</head>
+<body>
+    <!-- Navbar și interfața de limbă (identice cu celelalte pagini) -->
+    <div class="navbar">
+      <div class="menu">
+        <a id="menu-home" href="./index.html">Home</a>
+        <a id="menu-activities" href="./activitati.html">Activități</a>
+        <a id="menu-about" href="./curiozitati.html">Curiozități despre Miciu-Piciu</a>
+        <a id="menu-gallery" href="./galerie.html">Galerie Foto</a>
+        <a id="menu-memories" href="./construieste.aminitiri.html">Construiește amintiri</a>
+        <a id="menu-contact" href="./contact.html">Ne găsești aici</a>
+        <a id="menu-sacru" href="./mesaj-sacru.html">Mesaj Sacru</a>
+      </div>
+    </div>
+    <div class="language-interface">
+      <div class="globe-icon-container">
+        <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
+        <div id="language-flags" class="language-flags">
+          <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
+          <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
+          <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
+        </div>
+      </div>
+    </div>
+
+    <h1 class="page-title" data-i18n-key="map_title">Indian Camping Nucșoara</h1>
+    <h2 class="page-subtitle" data-i18n-key="map_subtitle"style="font-size: 1.5em;">Pe urmele lui Miciu-Piciu</h2> 
+    
+    <div class="sacred-text-container">
+        <p data-i18n-key="sacred_intro1">Oooooo, tineri călători ai pădurii și ai glumei bune!</p>
+        <p data-i18n-key="sacred_intro2">Vă aştept sa pășiți pe un tărâm magic, misterios și ușor lipicios pe alocuri – Campingul Tribului Vesel, păzit de Zglobiul Șaman Miciu-Piciu! Aici, corturile vorbesc între ele (în somn), frunzele dansează după ploaie, iar broaștele cântă karaoke după apus.</p>
+        
+        <p data-i18n-key="sacred_location">În acest loc sacru:</p>
+        <p data-i18n-key="sacred_rule1">Fiecare copil este un mic vrăjitor în devenire!</p>
+        <p data-i18n-key="sacred_rule2">Penele din păr sunt mai valoroase decât aurul (mai ales dacă nu-s de găină).</p>
+        <p data-i18n-key="sacred_rule3">Puful de păpădie este combustibil pentru vise îndrăznețe!</p>
+        <p data-i18n-key="sacred_rule4">Iar regula principală este: Dacă nu râzi de cel puțin 5 ori pe zi, spiritele dulciurilor se supără și... se ascund!</p>
+       
+        <p data-i18n-key="sacred_outro">Șamanul Miciu-Piciu vă urează bun venit și așteaptă cu nerăbdare întâlnirea magică sub soarele poznaș!</p>
+    </div>
+    <script>
+      function toggleLanguages() {
+        document.getElementById('language-flags').classList.toggle('visible');
+      }
+  
+      function setLanguage(lang) {
+        // 1. Salvează limba selectată
+        localStorage.setItem('selectedLanguage', lang);
+  
+        // 2. Obiectul cu toate traducerile
+        const translations = {
+          ro: {
+              'menu-home': 'Home', 'menu-activities': 'Activități', 'menu-about': 'Curiozități', 'sub-about': 'despre Miciu-Piciu', 'menu-gallery': 'Galerie', 'menu-memories': 'Construiește amintiri', 'menu-contact': 'Ne găsești aici', 'menu-sacru': 'Mesaj Sacru',
+              'map_title': 'Indian Camping Nucșoara',
+              'map_subtitle': 'Pe urmele lui Miciu-Piciu',
+              'sacred_intro1': 'Oooooo, tineri călători ai pădurii și ai glumei bune!',
+              'sacred_intro2': 'Vă aştept sa pășiți pe un tărâm magic, misterios și ușor lipicios pe alocuri – Campingul Tribului Vesel, păzit de Zglobiul Șaman Miciu-Piciu! Aici, corturile vorbesc între ele (în somn), frunzele dansează după ploaie, iar broaștele cântă karaoke după apus.',
+              'sacred_location': 'În acest loc sacru:',
+              'sacred_rule1': 'Fiecare copil este un mic vrăjitor în devenire!',
+              'sacred_rule2': 'Penele din păr sunt mai valoroase decât aurul (mai ales dacă nu-s de găină).',
+              'sacred_rule3': 'Puful de păpădie este combustibil pentru vise îndrăznețe!',
+              'sacred_rule4': 'Iar regula principală este: Dacă nu râzi de cel puțin 5 ori pe zi, spiritele dulciurilor se supără și... se ascund!',
+              'sacred_outro': 'Șamanul Miciu-Piciu vă urează bun venit și așteaptă cu nerăbdare întâlnirea magică sub soarele poznaș!'
+          },
+          en: {
+              'menu-home': 'Home', 'menu-activities': 'Activities', 'menu-about': 'About', 'sub-about': 'about Miciu-Piciu', 'menu-gallery': 'Gallery', 'menu-memories': 'Build Memories', 'menu-contact': 'Contact us', 'menu-sacru': 'Sacred Message',
+              'map_title': 'Indian Camping Nucșoara',
+              'map_subtitle': 'On the trail of Miciu-Piciu',
+              'sacred_intro1': 'Ooooooh, young travelers of the forest and of good jokes!',
+              'sacred_intro2': 'I await you to step into a magical realm, mysterious and a bit sticky in places – the Merry Tribe Camping, guarded by the Shaman Zglobiu Miciu-Piciu! Here, the tents talk to each other (in their sleep), the leaves dance after the rain, and the frogs sing karaoke after sunset.',
+              'sacred_location': 'In this sacred place:',
+              'sacred_rule1': 'Every child is a little wizard in the making!',
+              'sacred_rule2': 'Feathers from your hair are more valuable than gold (especially if they\'re not from a chicken).',
+              'sacred_rule3': 'Dandelion fluff is the fuel for daring dreams!',
+              'sacred_rule4': 'And the main rule is: If you don\'t laugh at least 5 times a day, the spirits of the sweets get upset and... they hide!',
+              'sacred_outro': 'Shaman Miciu-Piciu wishes you a warm welcome and eagerly awaits the magical encounter under the playful sun!'
+          },
+          it: {
+              'menu-home': 'Home', 'menu-activities': 'Attività', 'menu-about': 'Curiosità', 'sub-about': 'su Miciu-Piciu', 'menu-gallery': 'Galleria', 'menu-memories': 'Crea ricordi', 'menu-contact': 'Contattaci', 'menu-sacru': 'Messaggio Sacro',
+              'map_title': 'Indian Camping Nucșoara',
+              'map_subtitle': 'Sulle tracce di Miciu-Piciu',
+              'sacred_intro1': 'Ooooooh, giovani viaggiatori della foresta e delle buone battute!',
+              'sacred_intro2': 'Vi aspetto per entrare in un regno magico, misterioso e un po\' appiccicoso a tratti – il Campeggio della Tribù Allegra, custodito dallo Sciamano Zglobiu Miciu-Piciu! Qui, le tende si parlano (nel sonno), le foglie danzano dopo la pioggia e le rane cantano al karaoke dopo il tramonto.',
+              'sacred_location': 'In questo luogo sacro:',
+              'sacred_rule1': 'Ogni bambino è un piccolo mago in divenire!',
+              'sacred_rule2': 'Le piume tra i capelli sono più preziose dell\'oro (soprattutto se non sono di gallina).',
+              'sacred_rule3': 'La lanugine di dente di leone è il carburante per i sogni audaci!',
+              'sacred_rule4': 'E la regola principale è: Se non ridi almeno 5 volte al giorno, gli spiriti dei dolci si arrabbiano e... si nascondono!',
+              'sacred_outro': 'Lo Sciamano Miciu-Piciu vi dà il benvenuto e attende con impazienza l\'incontro magico sotto il sole birichino!'
+          }
+        };
+  
+        const langPack = translations[lang];
+  
+        // Traducem meniul
+        document.querySelectorAll('[id^="menu-"]').forEach(el => {
+          if (langPack[el.id]) {
+            if (el.id === 'menu-about' && el.querySelector('.sub-text')) {
+              el.firstChild.textContent = langPack[el.id] + ' ';
+            } else {
+              el.textContent = langPack[el.id];
+            }
+          }
+        });
+        const subAbout = document.getElementById('sub-about');
+        if (subAbout && langPack['sub-about']) {
+          subAbout.textContent = langPack['sub-about'];
+        }
+  
+        // Traducem conținutul paginii
+        document.querySelectorAll('[data-i18n-key]').forEach(el => {
+            const key = el.getAttribute('data-i18n-key');
+            if (langPack[key]) {
+                el.innerHTML = langPack[key];
+            }
+        });
+  
+        document.getElementById('language-flags').classList.remove('visible');
+      }
+  
+      // La încărcarea paginii, citește limba salvată și aplic-o
+      document.addEventListener('DOMContentLoaded', () => {
+          const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
+          setLanguage(savedLang);
+      });
+  </script>
+  </body>
+</html>

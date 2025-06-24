@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ne găsești aici</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+      padding-top: 80px; /* Spațiu pentru navbar */
+      min-width: 671px; /* Păstrează layout-ul fix */
+    }
+    
+    h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 3.2em;
+      color: black;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    /* --- Stilurile pentru Navbar și Limbi (păstrate) --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #f3f3f3;
+      padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
+      border-bottom-right-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .navbar::-webkit-scrollbar { display: none; }
+    
+    .menu {
+      display: flex;
+      gap: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      align-items: flex-end;
+      white-space: nowrap;      
+    }
+    .menu a {
+      text-decoration: none;
+      color: #555;
+      font-family: Georgia, serif;
+      padding: 0 8px;
+    }
+    .sub-text {
+      font-size: 0.7em;
+      font-weight: normal;
+      margin-left: 2px;
+    }
+
+    .language-interface {
+      position: fixed;
+      top: 0; right: 0;
+      z-index: 2000;
+    }
+    .globe-icon-container {
+      position: fixed;
+      top: 10px; right: 10px;
+      z-index: 2100;
+      pointer-events: auto;
+    }
+    .globe-icon {
+      width: 60px;
+      cursor: pointer;
+    }
+    .language-flags {
+      position: absolute;
+      top: 0; right: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+      width: 160px; height: 160px;
+    }
+    .language-flags.visible { 
+        pointer-events: auto; 
+    }
+    .language-flags img {
+        width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      position: absolute;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      opacity: 0; 
+      transform: scale(0.5); 
+    }
+    .language-flags.visible img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Reguli care poziționează fiecare steag individual */
+    .language-flags.visible #flag-it { top: 10px; left: 10px; }
+    .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+    .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+    /* --- Stiluri NOI pentru Pagina de Contact --- */
+    .contact-container {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+      padding: 0 20px;
+    }
+    .contact-container h1 {
+      font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .contact-container p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 25px;
+    }
+    .contact-container a {
+      color: #2a9d8f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+     .contact-container a:hover {
+        text-decoration: underline;
+     }
+  </style>
+</head>
+<body>
+    <h1 trad="map_title" style="text-align: center;">Indian Camping Nucșoara</h1>
+    <!-- Navbar fix stânga sus -->
+    <div class="navbar">
+      <div class="menu">
+        <a id="menu-home" href="./index.html">Home</a>
+        <a id="menu-activities" href="./activitati.html">Activități</a>
+        <a id="menu-about" href="./curiozitati.html">Curiozități despre Miciu-Piciu</a>
+        <a id="menu-gallery" href="./galerie.html">Galerie Foto</a>
+        <a id="menu-memories" href="./construieste.aminitiri.html">Construiește amintiri</a>
+        <a id="menu-sacru" href="./mesaj sacru.html">Mesaj Sacru</a>
+      </div>
+    </div>
+    
+    <!-- Limbă fix dreapta sus -->
+    <div class="language-interface">
+      <div class="globe-icon-container">
+        <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
+        <div id="language-flags" class="language-flags">
+          <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
+          <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
+          <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Conținutul paginii de contact -->
+    <div class="contact-container">
+      <h2 trad="contact_title">Cum ajungi la Camping Miciu Piciu</h1>
+      
+      <p trad="line1">Dacă îți pare că ești norocos că te-ai născut în era tehnologiei, 
+        <a href="https://www.google.com/maps/place/45°20'09.1%22N+24°46'08.9%22E/@45.3361383,24.7475671,14z/data=!4m4!3m3!8m2!3d45.3358612!4d24.769124?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" trad="line1_link">apasă aici</a>:</p>
+      
+      <p trad="line2">Dacă ai nevoie întotdeauna de poze pentru a înțelege anumite informații, privește 
+        <a href="./harta.html" target="_blank" rel="noopener noreferrer" title="Vezi harta mare">
+            <img 
+                src="./Harta.jpeg" 
+                alt="Harta Camping Miciu Piciu" 
+                style="max-width: 100%; width: 700px; border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;"
+            >
+        </a>
+      </p>
+      <p trad="line3">Dacă ai visat mereu să fii un mic explorator, asta este șansa ta 🙂, ne găsești aici: Nucșoara-Grui Argeș, Izlaz</p>
+      
+      <p trad="line4"><strong>Dar îți putem oferi oricând o mână de ajutor în caz că ai nevoie!</strong></p>
+      
+      <p trad="line5">Sună-ne oricând: <a href="tel:0040732857999">0732857999</a></p>
+      <p><a href="./rezerva.html" target="_blank" rel="noopener noreferrer" trad="line6_link">Rezervă un loc!</a></p>
+    </div>
+
+    <script>
+      // --- Funcția pentru a arăta/ascunde steagurile ---
+      function toggleLanguages() {
+          document.getElementById('language-flags').classList.toggle('visible');
+      }
+  
+      // --- O SINGURĂ funcție setLanguage care face TOTUL ---
+      function setLanguage(lang) {
+          // Pas 1: Salvează limba aleasă pentru celelalte pagini
+          localStorage.setItem('selectedLanguage', lang);
+  
+          // Pas 2: Obiectul cu traducerile pentru pagina curentă
+          const translations = {
+              ro: {
+                  'menu-home': 'Home', 'menu-activities': 'Activități', 'menu-about': 'Curiozități', 'sub-about': 'despre Miciu-Piciu', 'menu-gallery': 'Galerie', 'menu-memories': 'Construiește amintiri', 'menu-contact': 'Ne găsești aici', 'menu-sacru': 'Mesaj Sacru',
+                  contact_title: "Cum ajungi la Camping Miciu Piciu",
+                  line1: "Dacă îți pare că ești norocos că te-ai născut în era tehnologiei, {link}:",
+                  line1_link: "apasă aici",
+                  line2: "Dacă ai nevoie întotdeauna de poze pentru a înțelege anumite informații, privește {link}",
+                  line2_link: "această hartă detaliată",
+                  line3: "Dacă ai visat mereu să fii un mic explorator, asta este șansa ta 🙂, ne găsești aici: Nucșoara-Grui Argeș, Izlaz",
+                  line4: "<strong>Dar îți putem oferi oricând o mână de ajutor în caz că ai nevoie!</strong>",
+                  line5: 'Sună-ne oricând: <a href="tel:0732857999">0732857999</a>',
+                  line6_link: "Rezervă un loc!"
+              },
+              en: {
+                  'menu-home': 'Home', 'menu-activities': 'Activities', 'menu-about': 'About', 'sub-about': 'about Miciu-Piciu', 'menu-gallery': 'Gallery', 'menu-memories': 'Build Memories', 'menu-contact': 'Find Us Here', 'menu-sacru': 'Sacred Message',
+                  contact_title: "How to get to Miciu Piciu Camping",
+                  line1: "If you feel lucky to be born in the age of technology, {link}:",
+                  line1_link: "click here",
+                  line2: "If you always need pictures to understand certain information, check out {link}",
+                  line2_link: "this detailed map",
+                  line3: "If you've always dreamed of being a little explorer, this is your chance 🙂, you can find us here: Nucșoara-Grui Argeș, Izlaz",
+                  line4: "<strong>But we can always offer you a helping hand in case you need it!</strong>",
+                  line5: 'Call us anytime: <a href="tel:0040732857999">0732857999</a>',
+                  line6_link: "Book a spot!"
+              },
+              it: {
+                  'menu-home': 'Home', 'menu-activities': 'Attività', 'menu-about': 'Curiosità', 'sub-about': 'su Miciu-Piciu', 'menu-gallery': 'Galleria', 'menu-memories': 'Crea ricordi', 'menu-contact': 'Ci trovi qui', 'menu-sacru': 'Messaggio Sacro',
+                  contact_title: "Come arrivare al Camping Miciu Piciu",
+                  line1: "Se ti senti fortunato ad essere nato nell'era della tecnologia, {link}:",
+                  line1_link: "clicca qui",
+                  line2: "Se hai sempre bisogno di immagini per capire certe informazioni, guarda {link}",
+                  line2_link: "questa mappa dettagliata",
+                  line3: "Se hai sempre sognato di essere un piccolo esploratore, questa è la tua occasione 🙂, ci trovi qui: Nucșoara-Grui Argeș, Izlaz",
+                  line4: "<strong>Ma possiamo sempre offrirti una mano in caso di bisogno!</strong>",
+                  line5: 'Chiamaci in qualsiasi momento: <a href="tel:0040732857999">0732857999</a>',
+                  line6_link: "Prenota un posto!"
+              }
+          };
+  
+          const langPack = translations[lang];
+  
+          // Pas 3: Execută traducerile
+          // Meniu
+          document.querySelectorAll('[id^="menu-"], [id^="sub-"]').forEach(el => {
+              if (langPack[el.id]) {
+                  el.textContent = langPack[el.id];
+              }
+          });
+  
+          // Conținut
+          document.querySelectorAll('[trad]').forEach(el => {
+              const key = el.getAttribute('trad');
+              const translation = langPack[key];
+  
+              if (translation && translation.includes('{link}')) {
+                  const originalLink = el.querySelector('a');
+                  const linkKey = `${key}_link`;
+                  const linkText = langPack[linkKey];
+                  const href = originalLink ? originalLink.getAttribute('href') : '#';
+                  const target = originalLink ? originalLink.getAttribute('target') : '';
+                  let linkHTML = `<a href="${href}"`;
+                  if (target) {
+                      linkHTML += ` target="${target}" rel="noopener noreferrer"`;
+                  }
+                  linkHTML += `>${linkText}</a>`;
+                  el.innerHTML = translation.replace('{link}', linkHTML);
+              } else if (translation) {
+                  el.innerHTML = translation;
+              }
+          });
+  
+          // Titlu de contact
+          if (document.querySelector('[trad="contact_title"]')) {
+              document.querySelector('[trad="contact_title"]').innerHTML = langPack['contact_title'];
+          }
+  
+          // Pas 4: Ascunde steagurile
+          document.getElementById('language-flags').classList.remove('visible');
+      }
+  
+      // --- La încărcarea paginii, citește limba salvată și aplic-o (O SINGURĂ DATĂ) ---
+      document.addEventListener('DOMContentLoaded', () => {
+          const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
+          setLanguage(savedLang);
+      });
+  </script>
+</body>
+</html>

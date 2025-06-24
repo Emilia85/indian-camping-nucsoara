@@ -1,0 +1,113 @@
+.language-interface {
+	position: fixed;
+	top: 0;
+	right: 0;
+	/* Width și Height complete pentru a permite poziționarea globului */
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 999;
+}
+
+/* Globul pământesc și PĂRINTELE STEAGURILOR */
+.globe-icon-container {
+	position: absolute; /* Poziționat absolut în raport cu .language-interface (viewport) */
+	top: 10px; /* Poziția globului de sus */
+	right: 10px; /* Poziția globului de la dreapta */
+	z-index: 1000;
+	pointer-events: auto; /* Activ pentru click pe glob */
+	/* NOU: face acest container un context de poziționare pentru steaguri */
+	/* Păstrăm padding-bottom: 10px; de la glob */
+	padding-bottom: 10px; /* dacă vrei spațiu sub glob */
+}
+
+.globe-icon {
+	width: 80px;
+	cursor: pointer;
+	filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+}
+
+/* Containerul pentru steaguri - acum este COPILUL lui .globe-icon-container */
+.language-flags {
+	position: absolute; /* Poziționat absolut în raport cu .globe-icon-container */
+	top: 0; /* Aliniază la partea de sus a globului */
+	right: 0; /* Aliniază la partea dreaptă a globului */
+	pointer-events: none; /* Inactiv implicit */
+	transition: opacity 0.3s ease-in-out;
+	/* NOU: Ajustează dimensiunea acestui container pentru a cuprinde steagurile */
+	width: 160px; /* Lățime suficientă pentru steaguri */
+	height: 160px; /* Înălțime suficientă pentru steaguri */
+	/* NOU: Poziționarea negativă pentru a "muta" steagurile în jurul globului */
+	transform: translate(0%, 0%); /* Resetează transform, dacă ai avut */
+}
+
+.language-flags.visible {
+	pointer-events: auto; /* Activează click-uri când este vizibil */
+}
+
+.language-flags img {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	box-shadow: 0 0 8px rgba(0,0,0,0.3);
+	cursor: pointer;
+	position: absolute; /* Poziționează fiecare steag individual în raport cu .language-flags */
+	transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Poziționarea individuală a steagurilor când sunt vizibile (AJUSTĂ AICI!) */
+.language-flags.visible #flag-it {
+	/* Sus-stânga față de glob */
+	top: 10px;   /* Ajustează pentru a fi la înălțimea dorită */
+	left: 10px; /* Ajustează pentru a fi la stânga globului */
+	opacity: 1;
+	transform: scale(1);
+}
+.language-flags.visible #flag-uk {
+	/* Mijloc-stânga față de glob */
+	top: 90px; /* Ajustează pentru a fi la înălțimea dorită */
+	left: -10px; /* Ajustează pentru a fi mai la stânga globului */
+	opacity: 1;
+	transform: scale(1);
+}
+.language-flags.visible #flag-ro {
+	/* Jos-dreapta față de glob */
+	bottom: -10px; /* Ajustează pentru a fi la înălțimea dorită (de jos) */
+	right: 20px;  /* Ajustează pentru a fi la dreapta globului */
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* Stare inițială (ascunsă) a steagurilor */
+.language-flags #flag-it,
+.language-flags #flag-uk,
+.language-flags #flag-ro {
+	opacity: 0;
+	transform: scale(0.5); /* Pornesc mici și se măresc */
+}
+
+
+/* Stiluri pentru restul paginii tale */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  font-size: 1.2em;
+}
+
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}

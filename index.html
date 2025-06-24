@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Miciu-Piciu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        body {
+          background: white;
+          margin: 0;
+          padding: 0;
+          font-family: 'Lobster', cursive;
+          min-width: 671px;
+        }
+        h1{
+            text-align: center;
+        }
+        #subtitle{
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            background: white;
+        }
+        .section1 {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+        .responsive {
+            max-width: 100%;
+            height: auto;
+        }
+        .left {
+            flex: 1;
+            min-width: 280px;
+            padding-right: 20px;
+            margin-left: 5%;
+            margin-right: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+        .left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .left li {
+            font-size: 2.0em;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .left li::before {
+            content: '●';
+            color: black;
+            font-size: 1.2em;
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-60%);
+        }
+        .left .sub-text {
+            display: block;
+            font-size: 0.7em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .section2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 5px; /* mai mic decât 20px */
+        }
+        .section2 .left {
+            margin-right: 5px;
+            padding-right: 0;
+        }
+        .section2 .right {
+            margin-top: 10%;
+            margin-left: 0;
+        }
+        .right {
+            max-width: 600px;
+            font-size: 2.2em;
+            line-height: 1.4;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10%;
+        }
+        .right li {
+            font-size: 0.8em;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            list-style: none;
+        }
+        .right li::before {
+            content: '●';
+            color: black;
+            font-size: 1.2em;
+            position: absolute;
+            left: -10px;
+            top: 24%;
+            transform: translateY(-50%);
+        }
+        a{
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .language-interface {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        .globe-icon-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            pointer-events: auto;
+            padding-bottom: 10px;
+        }
+        .globe-icon {
+            width: 80px;
+            cursor: pointer;
+            filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+        }
+        .language-flags {
+            position: absolute;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+            width: 160px;
+            height: 160px;
+            transform: translate(0%, 0%);
+        }
+        .language-flags.visible {
+            pointer-events: auto;
+        }
+        .language-flags img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        .language-flags.visible #flag-it {
+            top: 10px;
+            left: 10px;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .language-flags.visible #flag-uk {
+            top: 90px;
+            left: -10px;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .language-flags.visible #flag-ro {
+            bottom: -10px;
+            right: 20px;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .language-flags #flag-it,
+        .language-flags #flag-uk,
+        .language-flags #flag-ro {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Indian Camping Nucșoara</h1>
+    <h2 id="subtitle">Pe urmele lui Miciu-Piciu</h2>
+    <div class="language-interface">
+        <div class="globe-icon-container">
+            <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
+            <div id="language-flags" class="language-flags">
+                <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
+                <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
+                <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section1">
+            <div class="right">
+                <img src="./corturi.jpeg" class="responsive" />
+            </div>
+            <div class="left">
+                <ul>
+                    <li><b><a href="./activitati.html" target="_blank" rel="noopener noreferrer" id="menu-activities">Activități</a></b></li>
+                    <li><b><a href="./curiozitati.html" target="_blank" rel="noopener noreferrer" id="menu-about">Curiozități</a></b> <span class="sub-text"><b>despre Miciu-Piciu</b></span></li>
+                    <li><b><a href="./galerie.html" target="_blank" rel="noopener noreferrer" id="menu-gallery">Galerie</a></b> <span class="sub-text"><b>Foto</b></span></li>
+                    <li><b><a href="./construieste.aminitiri.html" target="_blank" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
+                    <li><b><a href="./contact.html" id="menu-contact" target="_blank" rel="noopener noreferrer">Ne găsești aici</a></b></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="left">
+                <a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="main-message-img" title="Deschide mesajul sacru!">
+                    <img src='./miciu-piciu.jpeg' class="responsive" alt="Miciu-Piciu" title=""/>
+                </a>
+            </div>
+            <div class="right responsive">
+                <ul>
+                    <li>
+                        <a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="main-message" title="Deschide mesajul sacru!">
+                            <b>Mesaj Sacru de Bun-Venit în Tărâmul lui Miciu-Piciu</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleLanguages() {
+            document.getElementById('language-flags').classList.toggle('visible');
+        }
+    
+        function setLanguage(lang) {
+            // Pas 1: Salvează limba (aici este locul corect)
+            localStorage.setItem('selectedLanguage', lang); 
+    
+            // Pas 2: Obiectul cu traducerile
+            const messages = {
+                ro: {
+                    title: 'Mesaj Sacru de Bun-Venit în Tărâmul lui Miciu-Piciu',
+                    subtitle: 'Pe urmele lui Miciu-Piciu',
+                    activities: 'Activități',
+                    about: 'Curiozități',
+                    gallery: 'Galerie foto',
+                    memories: 'Construiește amintiri',
+                    contact: 'Ne găsești aici'
+                },
+                en: {
+                    title: 'Sacred Welcome Message to the Land of Miciu-Piciu',
+                    subtitle: 'On the Trail of Miciu-Piciu',
+                    activities: 'Activities',
+                    about: 'About',
+                    gallery: 'Photo Gallery',
+                    memories: 'Build Memories',
+                    contact: 'Contact'
+                },
+                it: {
+                    title: 'Messaggio Sacro di Benvenuto nella Terra di Miciu-Piciu',
+                    subtitle: 'Sulle tracce di Miciu-Piciu',
+                    activities: 'Attività',
+                    about: 'Chi siamo',
+                    gallery: 'Galleria foto',
+                    memories: 'Crea ricordi',
+                    contact: 'Contatto'
+                }
+            };
+    
+            // Pas 3: Execută traducerile (aici este locul lor corect)
+            // Am adăugat verificări pentru a preveni erorile dacă un ID nu există
+            if (document.getElementById('main-message')) document.getElementById('main-message').innerText = messages[lang].title;
+            if (document.getElementById('subtitle')) document.getElementById('subtitle').innerText = messages[lang].subtitle;
+            if (document.getElementById('menu-activities')) document.getElementById('menu-activities').innerText = messages[lang].activities;
+            if (document.getElementById('menu-about')) document.getElementById('menu-about').innerText = messages[lang].about;
+            if (document.getElementById('menu-gallery')) document.getElementById('menu-gallery').innerText = messages[lang].gallery;
+            if (document.getElementById('menu-memories')) document.getElementById('menu-memories').innerText = messages[lang].memories;
+            if (document.getElementById('menu-contact')) document.getElementById('menu-contact').innerText = messages[lang].contact;
+    
+            // Ascunde steagurile
+            document.getElementById('language-flags').classList.remove('visible');
+        }
+    
+        // --- La încărcarea paginii, citește limba salvată și aplic-o ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
+            setLanguage(savedLang);
+        });
+    </script>
+    </body>
+    </html>

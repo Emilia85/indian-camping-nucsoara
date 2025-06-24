@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+      padding-top: 80px; /* Spațiu pentru navbar */
+      min-width: 671px; /* Păstrează layout-ul fix */
+    }
+    .container {
+      max-width: 900px;         
+      margin: 40px auto;        
+      padding: 30px;
+      text-align: center;
+      border-radius: 12px;
+    }
+    h1{
+      font-family: 'Lobster', cursive;
+      text-align: center;
+    }
+    h1,h2 {
+      font-family: 'Lobster', cursive;
+      font-size: 3.2em;
+      color: black;
+      margin-top: -20px;
+      margin-bottom: 30px;
+    }
+    .harta-imagine {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #f3f3f3;
+      padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
+      border-bottom-right-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .navbar::-webkit-scrollbar { display: none; }
+    .menu {
+      display: flex;
+      gap: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      align-items: flex-end;
+      white-space: nowrap;      
+    }
+    .menu a { text-decoration: none; color: #555; font-family: Georgia, serif; padding: 0 8px; }
+    .sub-text { font-size: 0.7em; font-weight: normal; margin-left: 2px; }
+    .language-interface { position: fixed; top: 0; right: 0; z-index: 2000; }
+    .globe-icon-container { position: fixed; top: 10px; right: 10px; z-index: 2100; pointer-events: auto; }
+    .globe-icon { width: 60px; cursor: pointer; }
+    .language-flags { position: absolute; top: 0; right: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; width: 160px; height: 160px; }
+    .language-flags.visible { pointer-events: auto; }
+    .language-flags img { width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3); cursor: pointer; position: absolute; transition: transform 0.3s ease-out, opacity 0.3s ease-out; opacity: 0; transform: scale(0.5); }
+    .language-flags.visible img { opacity: 1; transform: scale(1); }
+    .language-flags.visible #flag-it { top: 10px; left: 10px; }
+    .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+    .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+  </style>
+</head>
+<body>
+  <h1 trad="map_title">Indian Camping Nucșoara</h1>
+
+    <!-- Navbar fix stânga sus -->
+    <div class="navbar">
+      <div class="menu">
+        <a id="menu-home" href="./index.html">Home</a>
+        <a id="menu-activities" href="./activitati.html">Activități</a>
+        <a id="menu-about" href="./curiozitati.html">Curiozități<span class="sub-text" id="sub-about">despre Miciu-Piciu</span></a>
+        <a id="menu-gallery" href="./galerie.html">Galerie</a>
+        <a id="menu-memories" href="./construieste.aminitiri.html">Construiește amintiri</a>
+        <a id="menu-contact" href="./contact.html">Ne găsești aici</a>
+        <a id="menu-sacru" href="./mesaj sacru.html">Mesaj Sacru</a>
+      </div>
+    </div>
+    
+    <!-- Limbă fix dreapta sus -->
+    <div class="language-interface">
+      <div class="globe-icon-container">
+        <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
+        <div id="language-flags" class="language-flags">
+          <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
+          <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
+          <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Containerul cu harta, mutat la locul lui și cu titluri etichetate -->
+    <div class="container">
+      <h2 trad="map_subtitle" style="font-size: 1.5em;">Nucșoara, Județul Argeș</h2>
+      <img src="./Harta.jpeg" alt="Harta detaliată" class="harta-imagine">
+    </div>
+
+    <script>
+      function toggleLanguages() {
+        document.getElementById('language-flags').classList.toggle('visible');
+      }
+  
+      function setLanguage(lang) {
+        // 1. Salvează limba selectată
+        localStorage.setItem('selectedLanguage', lang);
+  
+        // 2. Obiectul cu toate traducerile
+        const translations = {
+          ro: {
+              'menu-home': 'Home', 'menu-activities': 'Activități', 'menu-about': 'Curiozități', 'sub-about': 'despre Miciu-Piciu', 'menu-gallery': 'Galerie', 'menu-memories': 'Construiește amintiri', 'menu-contact': 'Ne găsești aici', 'menu-sacru': 'Mesaj Sacru',
+              'page_title': "Harta - Camping Indian Nucșoara",
+              'map_title': 'Indian Camping Nucșoara',
+              'map_subtitle': 'Nucșoara, Județul Argeș'
+          },
+          en: {
+              'menu-home': 'Home', 'menu-activities': 'Activities', 'menu-about': 'About', 'sub-about': 'about Miciu-Piciu', 'menu-gallery': 'Gallery', 'menu-memories': 'Build Memories', 'menu-contact': 'Contact us', 'menu-sacru': 'Sacred Message',
+              'page_title':"Map - Indian Camping Nucșoara",
+              'map_title': 'Indian Camping Nucșoara',
+              'map_subtitle': 'Nucșoara, Argeș County'
+          },
+          it: {
+              'menu-home': 'Home', 'menu-activities': 'Attività', 'menu-about': 'Curiosità', 'sub-about': 'su Miciu-Piciu', 'menu-gallery': 'Galleria', 'menu-memories': 'Crea ricordi', 'menu-contact': 'Contattaci', 'menu-sacru': 'Messaggio Sacro',
+              'page_title':"Mappa - Camping Indian Nucșoara",
+              'map_title': 'Indian Camping Nucșoara',
+              'map_subtitle': 'Nucșoara, Distretto di Argeș'
+          }
+        };
+  
+        const langPack = translations[lang];
+        if (langPack.page_title) {
+          document.title = langPack.page_title;
+        }
+        // Traducem meniul
+        document.querySelectorAll('[id^="menu-"], [id^="sub-"]').forEach(el => {
+          if (langPack[el.id]) {
+            el.textContent = langPack[el.id];
+          }
+        });
+  
+        // Traducem conținutul paginii (titlurile)
+        document.querySelectorAll('[trad]').forEach(el => {
+            const key = el.getAttribute('trad');
+            if (langPack[key]) {
+                el.innerHTML = langPack[key];
+            }
+        });
+  
+        // Ascunde steagurile după selecție
+        document.getElementById('language-flags').classList.remove('visible');
+      }
+  
+      // La încărcarea paginii, citește limba salvată și aplic-o
+      document.addEventListener('DOMContentLoaded', () => {
+          const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
+          setLanguage(savedLang);
+      });
+  </script>
+</body>
+</html>

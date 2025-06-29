@@ -191,10 +191,16 @@
             .gallery-grid { gap: 12px; }
             .gallery-row2 { gap: 12px; }
         }
-        @media (max-width: 600px) {
+        /*@media (max-width: 600px) {
             .gallery-container { max-width: 100vw; }
             .gallery-grid { grid-template-columns: 1fr; gap: 6px; }
             .gallery-row2 { grid-template-columns: 1fr; gap: 6px; }
+            .gallery-bottom img { aspect-ratio: 2/1; }
+        }*/
+        @media (max-width: 600px) {
+            .gallery-container { max-width: 100vw; }
+            .gallery-grid { gap: 6px; }      /* DOAR gap, nu grid-template-columns! */
+            .gallery-row2 { gap: 6px; }
             .gallery-bottom img { aspect-ratio: 2/1; }
         }
         @media (max-width: 700px) {

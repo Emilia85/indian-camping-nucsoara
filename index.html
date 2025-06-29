@@ -14,7 +14,7 @@
           margin: 0;
           padding: 0;
           font-family: 'Lobster', cursive;
-          min-width: 375px;
+          min-width: 450px;
         }
         h1{
             text-align: center;
@@ -106,7 +106,7 @@
         .right li {
             font-size: 0.8em;
             margin-bottom: 15px;
-            padding-left: 30px;
+            padding-left: -5px;
             position: relative;
             list-style: none;
         }
@@ -115,8 +115,8 @@
             color: black;
             font-size: 1.2em;
             position: absolute;
-            left: -10px;
-            top: 24%;
+            left: -30px;
+            top: 30%;
             transform: translateY(-50%);
         }
         a{
@@ -193,6 +193,48 @@
             opacity: 0;
             transform: scale(0.5);
         }
+        @media (min-width: 900px) {
+            .row {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                max-width: 100%;
+                flex-wrap: nowrap;
+            }
+
+            .welcome-text {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 1.1em;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .section2 .right {
+                flex-grow: 1;       
+                max-width: none;    
+                margin-top: 0;      
+                align-items: center;
+                justify-content: center;
+            }
+
+            #main-message b {
+                white-space: nowrap; 
+            }
+        }
+        @media (max-width: 899px) {
+            .section1 .right {
+                flex-basis: 280px; 
+                flex-shrink: 0;   
+            }
+
+            .section1 .left {
+                min-width: 0;     
+                margin-right: 15px; 
+            }
+        } 
     </style>
 </head>
 <body>
@@ -223,7 +265,7 @@
                 </ul>
             </div>
         </div>
-        <div class="section2">
+        <div class="section2 row">
             <div class="left">
                 <a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="main-message-img" title="Deschide mesajul sacru!">
                     <img src='./miciu-piciu.jpeg' class="responsive" alt="Miciu-Piciu" title=""/>
@@ -246,10 +288,8 @@
         }
     
         function setLanguage(lang) {
-            // Pas 1: Salvează limba (aici este locul corect)
             localStorage.setItem('selectedLanguage', lang); 
     
-            // Pas 2: Obiectul cu traducerile
             const messages = {
                 ro: {
                     title: 'Mesaj Sacru de Bun-Venit în Tărâmul lui Miciu-Piciu',

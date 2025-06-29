@@ -151,9 +151,9 @@
       min-width: 220px;
       width: 100vw;
       box-sizing: border-box;
-      white-space: nowrap;      /* ADĂUGAT */
-      overflow-x: auto;         /* ADĂUGAT */
-      scrollbar-width: none;    /* Firefox */
+      white-space: nowrap;      
+      overflow-x: auto;         
+      scrollbar-width: none;    
     }
     .menu {
       display: flex;
@@ -162,7 +162,7 @@
       font-weight: bold;
       margin-left: 0;
       align-items: flex-end;
-      white-space: nowrap;      /* ADĂUGAT */
+      white-space: nowrap;      
     }
     .menu a {
       text-decoration: none;
@@ -171,7 +171,7 @@
       padding: 0 6px;
       display: inline-flex;
       align-items: flex-end;
-      white-space: nowrap;      /* ADĂUGAT */
+      white-space: nowrap;      
     }
     
     .language-interface {
@@ -261,6 +261,37 @@
       .globe-icon {
         width: 48px;
       }
+    }
+    .page-title {
+        font-size: 2.4em;
+    }
+    .page-subtitle {
+        font-size: 1.6em;
+    }
+
+    .caption-wood, .terariu-caption {
+        font-size: 1.5em;
+    }
+
+    .section {
+        margin: 50px 0; 
+    }
+    .row, .three-image-row, .terariu-row {
+        gap: 25px; 
+    }
+
+    .image-box {
+        max-width: 150px;
+    }
+    .rotated-left, .rotated-right {
+        max-width: 110px;
+    }
+    .three-image-row .image-box:not(.rotated-left):not(.rotated-right) {
+        max-width: 180px;
+        margin-top: 30px;
+    }
+    .terariu-row .image-box {
+        max-width: 120px;
     }
   </style>
 </head>

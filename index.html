@@ -77,7 +77,7 @@
         }
         .left .sub-text {
             display: block;
-            font-size: 0.7em;
+            font-size: 0.8em;
             margin-top: 5px;
             font-style: italic;
         }
@@ -224,7 +224,7 @@
                 white-space: nowrap; 
             }
         }
-        @media (max-width: 899px) {
+        @media (max-width: 574px) {
             .section1 .right {
                 flex-basis: 280px; 
                 flex-shrink: 0;   
@@ -234,7 +234,7 @@
                 min-width: 0;     
                 margin-right: 15px; 
             }
-        } 
+        }
     </style>
 </head>
 <body>
@@ -258,8 +258,8 @@
             <div class="left">
                 <ul>
                     <li><b><a href="./activitati.html" target="_blank" rel="noopener noreferrer" id="menu-activities">Activități</a></b></li>
-                    <li><b><a href="./curiozitati.html" target="_blank" rel="noopener noreferrer" id="menu-about">Curiozități</a></b> <span class="sub-text"><b>despre Miciu-Piciu</b></span></li>
-                    <li><b><a href="./galerie.html" target="_blank" rel="noopener noreferrer" id="menu-gallery">Galerie</a></b> <span class="sub-text"><b>Foto</b></span></li>
+                    <li><b><a href="./curiozitati.html" target="_blank" rel="noopener noreferrer" id="menu-about">Curiozități</a></b> <span class="sub-text" id="menu-miciu"><b>despre Miciu-Piciu</b></span></li>
+                    <li><b><a href="./galerie.html" target="_blank" rel="noopener noreferrer" id="menu-gallery">Galerie</a></b></li>
                     <li><b><a href="./construieste.aminitiri.html" target="_blank" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
                     <li><b><a href="./contact.html" id="menu-contact" target="_blank" rel="noopener noreferrer">Ne găsești aici</a></b></li>
                 </ul>
@@ -296,6 +296,7 @@
                     subtitle: 'Pe urmele lui Miciu-Piciu',
                     activities: 'Activități',
                     about: 'Curiozități',
+                    miciu:'despre Miciu-Piciu',
                     gallery: 'Galerie foto',
                     memories: 'Construiește amintiri',
                     contact: 'Ne găsești aici'
@@ -304,7 +305,8 @@
                     title: 'Sacred Welcome Message to the Land of Miciu-Piciu',
                     subtitle: 'On the Trail of Miciu-Piciu',
                     activities: 'Activities',
-                    about: 'About',
+                    about: 'Curiosities',
+                    miciu:'about Miciu-Piciu',
                     gallery: 'Photo Gallery',
                     memories: 'Build Memories',
                     contact: 'Contact'
@@ -313,7 +315,8 @@
                     title: 'Messaggio Sacro di Benvenuto nella Terra di Miciu-Piciu',
                     subtitle: 'Sulle tracce di Miciu-Piciu',
                     activities: 'Attività',
-                    about: 'Chi siamo',
+                    about: 'Aneddoti ',
+                    miciu:'su Miciu-Piciu',
                     gallery: 'Galleria foto',
                     memories: 'Crea ricordi',
                     contact: 'Contatto'
@@ -326,6 +329,7 @@
             if (document.getElementById('subtitle')) document.getElementById('subtitle').innerText = messages[lang].subtitle;
             if (document.getElementById('menu-activities')) document.getElementById('menu-activities').innerText = messages[lang].activities;
             if (document.getElementById('menu-about')) document.getElementById('menu-about').innerText = messages[lang].about;
+            if (document.getElementById('menu-miciu')) document.getElementById('menu-miciu').innerText = messages[lang].miciu;
             if (document.getElementById('menu-gallery')) document.getElementById('menu-gallery').innerText = messages[lang].gallery;
             if (document.getElementById('menu-memories')) document.getElementById('menu-memories').innerText = messages[lang].memories;
             if (document.getElementById('menu-contact')) document.getElementById('menu-contact').innerText = messages[lang].contact;

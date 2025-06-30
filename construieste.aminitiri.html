@@ -11,7 +11,8 @@
       background-color: white;
       text-align: center;
       padding: 20px;
-      min-width: 375px;
+      min-width: 575px;
+      overflow-x: auto;
     }
     .page-title, .page-subtitle, .page-section-title {
       font-family: 'Lobster', cursive;
@@ -85,38 +86,38 @@
 
     }
     .three-image-row {
-    gap: 20px; 
-    align-items: flex-start; 
+        gap: 20px; 
+        align-items: flex-start; 
     }
 
     .three-image-row .image-box:not(.rotated-left):not(.rotated-right) {
-    max-width: 250px; 
-    margin-top: 50px; 
+        max-width: 250px; 
+        margin-top: 50px; 
     }
     .rotated-left img {
-      transform: rotate(-10deg);
+        transform: rotate(-10deg);
     }
 
     .rotated-right img {
-      transform: rotate(10deg);
+        transform: rotate(10deg);
     }
 
     .terariu-label {
-      font-size: 16px;
-      background: white;
-      padding: 4px 12px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      font-weight: bold;
-      margin: 5px 0;
+          font-size: 16px;
+          background: white;
+          padding: 4px 12px;
+          border-radius: 12px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          font-weight: bold;
+          margin: 5px 0;
     }
 
     .terariu-row {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      align-items: center;
-      margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          align-items: center;
+          margin-bottom: 10px;
     }
    
     .terariu-caption {
@@ -138,161 +139,108 @@
     }
     
     .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: #f3f3f3;
-      padding: 12px 24px 12px 8px;
-      border-bottom-right-radius: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      min-width: 220px;
-      width: 100vw;
-      box-sizing: border-box;
-      white-space: nowrap;      
-      overflow-x: auto;         
-      scrollbar-width: none;    
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #f3f3f3;
+        padding: 12px 24px 12px 8px;
+        border-bottom-right-radius: 18px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        min-width: 220px;
+        width: 100vw;
+        box-sizing: border-box;
+        white-space: nowrap;      
+        overflow-x: auto;         
+        scrollbar-width: none;    
     }
     .menu {
-      display: flex;
-      gap: 2px;
-      font-size: 1em;
-      font-weight: bold;
-      margin-left: 0;
-      align-items: flex-end;
-      white-space: nowrap;      
+        display: flex;
+        gap: 2px;
+        font-size: 1em;
+        font-weight: bold;
+        margin-left: 0;
+        align-items: flex-end;
+        white-space: nowrap;      
     }
     .menu a {
-      text-decoration: none;
-      color: #555;
-      font-family: Georgia, serif;
-      padding: 0 6px;
-      display: inline-flex;
-      align-items: flex-end;
-      white-space: nowrap;      
+        text-decoration: none;
+        color: #555;
+        font-family: Georgia, serif;
+        padding: 0 6px;
+        display: inline-flex;
+        align-items: flex-end;
+        white-space: nowrap;      
     }
     
     .language-interface {
-      position: fixed;
-      top: 0;
-      right: 0;
-      /*pointer-events: none;*/
-      z-index: 2000;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2000;
     }
     .globe-icon-container {
-      position: fixed;
-      top: 10px;
-      right: 5px;
-      z-index: 2100;
-      pointer-events: auto;
-      padding-bottom: 10px;
+        position: fixed;
+        top: 10px;
+        right: 5px;
+        z-index: 2100;
+        pointer-events: auto;
+        padding-bottom: 10px;
     }
     .globe-icon {
-      width: 80px;
-      cursor: pointer;
-      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+        width: 80px;
+        cursor: pointer;
+        filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
     }
     .language-flags {
-      position: absolute;
-      top: 0;
-      right: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-      width: 160px;
-      height: 160px;
-      transform: translate(0%, 0%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+        width: 160px;
+        height: 160px;
+        transform: translate(0%, 0%);
     }
     .language-flags.visible {
-      pointer-events: auto;
+        pointer-events: auto;
     }
     .language-flags img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-      cursor: pointer;
-      position: absolute;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        cursor: pointer;
+        position: absolute;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
     .language-flags.visible #flag-it {
-      top: 10px;
-      left: 10px;
-      opacity: 1;
-      transform: scale(1);
+        top: 10px;
+        left: 10px;
+        opacity: 1;
+        transform: scale(1);
     }
     .language-flags.visible #flag-uk {
-      top: 90px;
-      left: -10px;
-      opacity: 1;
-      transform: scale(1);
+        top: 90px;
+        left: -10px;
+        opacity: 1;
+        transform: scale(1);
     }
     .language-flags.visible #flag-ro {
-      bottom: -10px;
-      right: 20px;
-      opacity: 1;
-      transform: scale(1);
+        bottom: -10px;
+        right: 20px;
+        opacity: 1;
+        transform: scale(1);
     }
     .language-flags #flag-it,
     .language-flags #flag-uk,
     .language-flags #flag-ro {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    @media (max-width: 574px) {
-      .menu {
-        gap: 0;
-        font-size: 0.8em;
-        white-space: nowrap;
-        overflow-x: auto;
-        scrollbar-width: none; 
-      }
-      .menu a {
-        padding: 0 2px;      
-      }
-      .menu::-webkit-scrollbar {
-        display: none;
-      }
-      .navbar {
-        padding: 8px 8px 8px 4px;
-        white-space: nowrap;
-      }
-      .globe-icon {
-        width: 48px;
-      }
-    }
-    .page-title {
-        font-size: 2.4em;
-    }
-    .page-subtitle {
-        font-size: 1.6em;
+        opacity: 0;
+        transform: scale(0.5);
     }
 
-    .caption-wood, .terariu-caption {
-        font-size: 1.5em;
-    }
-
-    .section {
-        margin: 50px 0; 
-    }
-    .row, .three-image-row, .terariu-row {
-        gap: 25px; 
-    }
-
-    .image-box {
-        max-width: 150px;
-    }
-    .rotated-left, .rotated-right {
-        max-width: 110px;
-    }
-    .three-image-row .image-box:not(.rotated-left):not(.rotated-right) {
-        max-width: 180px;
-        margin-top: 30px;
-    }
-    .terariu-row .image-box {
-        max-width: 120px;
-    }
   </style>
 </head>
 <body>
@@ -300,12 +248,12 @@
   <div class="navbar">
     <div class="menu" style="list-style: none; padding-left: 0; margin: 0;">
       
-      <a href="./index.html" target="_blank" rel="noopener noreferrer" id="menu-home">Home</a>
-      <li><b><a href="./activitati.html" target="_blank" rel="noopener noreferrer" id="menu-activities">Activități</a></b></li>
-      <li><b><a href="./curiozitati.html" target="_blank" rel="noopener noreferrer" id="menu-about">Curiozități despre Miciu-Piciu</a></b></li>
-      <li><b><a href="./galerie.html" target="_blank" rel="noopener noreferrer" id="menu-gallery">Galerie Foto</a></b> </li>
-      <li><b><a href="./contact.html" id="menu-contact" target="_blank" rel="noopener noreferrer">Ne găsești aici</a></b></li>
-      <li><a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="menu-sacru">Mesaj Sacru</a></li>
+      <a href="./index.html" rel="noopener noreferrer" id="menu-home">Home</a>
+      <li><b><a href="./activitati.html" rel="noopener noreferrer" id="menu-activities">Activități</a></b></li>
+      <li><b><a href="./curiozitati.html" rel="noopener noreferrer" id="menu-about">Curiozități despre Miciu-Piciu</a></b></li>
+      <li><b><a href="./galerie.html" rel="noopener noreferrer" id="menu-gallery">Galerie Foto</a></b> </li>
+      <li><b><a href="./contact.html" id="menu-contact" rel="noopener noreferrer">Ne găsești aici</a></b></li>
+      <li><a href="./mesaj sacru.html" rel="noopener noreferrer" id="menu-sacru">Mesaj Sacru</a></li>
     </div>
   </div>
   <!-- Limbă fix dreapta sus -->

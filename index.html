@@ -85,7 +85,7 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            gap: 5px; /* mai mic decât 20px */
+            gap: 5px; 
         }
         .section2 .left {
             margin-right: 5px;
@@ -225,14 +225,26 @@
             }
         }
         @media (max-width: 574px) {
-            .section1 .right {
-                flex-basis: 280px; 
-                flex-shrink: 0;   
+            .section1 {
+                flex-direction: row-reverse !important;
             }
-
-            .section1 .left {
-                min-width: 0;     
-                margin-right: 15px; 
+            .section2 {
+                flex-direction: row !important;
+            }
+        
+            .right {
+                width: 600px !important;
+                font-size: 2.2em !important;
+            }
+            .section1 .right {
+                flex-basis: 400px !important; 
+            }
+            .section2 {
+                flex-direction: row !important;
+            }
+            .right {
+                width: 600px !important;
+                font-size: 2.2em !important;
             }
         }
     </style>
@@ -257,24 +269,24 @@
             </div>
             <div class="left">
                 <ul>
-                    <li><b><a href="./activitati.html" target="_blank" rel="noopener noreferrer" id="menu-activities">Activități</a></b></li>
-                    <li><b><a href="./curiozitati.html" target="_blank" rel="noopener noreferrer" id="menu-about">Curiozități</a></b> <span class="sub-text" id="menu-miciu"><b>despre Miciu-Piciu</b></span></li>
-                    <li><b><a href="./galerie.html" target="_blank" rel="noopener noreferrer" id="menu-gallery">Galerie</a></b></li>
-                    <li><b><a href="./construieste.aminitiri.html" target="_blank" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
-                    <li><b><a href="./contact.html" id="menu-contact" target="_blank" rel="noopener noreferrer">Ne găsești aici</a></b></li>
+                    <li><b><a href="./activitati.html" rel="noopener noreferrer" id="menu-activities">Activități</a></b></li>
+                    <li><b><a href="./curiozitati.html" rel="noopener noreferrer" id="menu-about">Curiozități</a></b> <span class="sub-text" id="menu-miciu"><b>despre Miciu-Piciu</b></span></li>
+                    <li><b><a href="./galerie.html" rel="noopener noreferrer" id="menu-gallery">Galerie</a></b></li>
+                    <li><b><a href="./construieste.aminitiri.html" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
+                    <li><b><a href="./contact.html" id="menu-contact" rel="noopener noreferrer">Ne găsești aici</a></b></li>
                 </ul>
             </div>
         </div>
         <div class="section2 row">
             <div class="left">
-                <a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="main-message-img" title="Deschide mesajul sacru!">
+                <a href="./mesaj sacru.html" rel="noopener noreferrer" id="main-message-img" title="Deschide mesajul sacru!">
                     <img src='./miciu-piciu.jpeg' class="responsive" alt="Miciu-Piciu" title=""/>
                 </a>
             </div>
             <div class="right responsive">
                 <ul>
                     <li>
-                        <a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="main-message" title="Deschide mesajul sacru!">
+                        <a href="./mesaj sacru.html" rel="noopener noreferrer" id="main-message" title="Deschide mesajul sacru!">
                             <b>Mesaj Sacru de Bun-Venit în Tărâmul lui Miciu-Piciu</b>
                         </a>
                     </li>

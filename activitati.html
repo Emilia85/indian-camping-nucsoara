@@ -71,7 +71,6 @@
       position: fixed;
       top: 0;
       right: 0;
-      /*pointer-events: none;*/
       z-index: 2000;
     }
     .globe-icon-container {
@@ -212,7 +211,7 @@
       background: #fff;
       transition: transform 0.4s ease;
     }
-    @media(min-width: 768px) {
+    /*@media(min-width: 768px) {
       .image-container img {
         width: 200px;
       }
@@ -238,35 +237,45 @@
       color: #555;
       font-size: 1.3em;
       text-shadow: 2px 4px 12px #aaa;
-    }
+    }*/
     @media (max-width: 420px) {
-      .menu {
+    /* Force desktop layout */
+    .menu {
         gap: 0;
-        font-size: 0.8em;
+        font-size: 1em;
         white-space: nowrap;
         overflow-x: auto;
-        scrollbar-width: none; 
-      }
-      .menu a {
-        padding: 0 2px;      
-      }
-      .menu::-webkit-scrollbar {
-        display: none;
-      }
-      .navbar {
-        padding: 8px 8px 8px 4px;
-        white-space: nowrap;
-      }
-      .globe-icon {
-        width: 48px;
-      }
-      body {
-        transform: scale(1.2);
-        transform-origin: top left;
-        width: 89.3vw;
-        overflow-x: hidden;
-      }
+        scrollbar-width: none;
     }
+    .menu a {
+        padding: 0 4px;
+    }
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+    .navbar {
+        padding: 12px 12px 12px 6px;
+        white-space: nowrap;
+    }
+    .globe-icon {
+        width: 56px;
+    }
+    .image-container img {
+        width: 300px !important; /* Keep desktop size */
+    }
+    
+    /* Prevent mobile-specific changes */
+    .image-container img:hover {
+        transform: scale(1.1) !important;
+    }
+    .highlighted-activity {
+        margin-left: 50px !important; /* Keep desktop margin */
+        font-size: 1.7em !important; /* Keep desktop font size */
+    }
+    .highlighted-activity::before {
+        font-size: 1.3em !important; /* Keep desktop bullet size */
+    }
+}
   </style>
 </head>
 <body>
@@ -274,12 +283,12 @@
   <div class="navbar">
     <div class="menu" style="list-style: none; padding-left: 0; margin: 0;">
       
-      <a href="./index.html" target="_blank" rel="noopener noreferrer" id="menu-home">Home</a>
-      <li><b><a href="./curiozitati.html" target="_blank" rel="noopener noreferrer" id="menu-about">Curiozități despre Miciu-Piciu</a></b></li>
-      <li><b><a href="./galerie.html" target="_blank" rel="noopener noreferrer" id="menu-gallery">Galerie Foto</a></b></li>
-      <li><b><a href="./construieste.aminitiri.html" target="_blank" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
-      <li><b><a href="./contact.html" id="menu-contact" target="_blank" rel="noopener noreferrer">Ne găsești aici</a></b></li>
-      <li><a href="./mesaj sacru.html" target="_blank" rel="noopener noreferrer" id="main-message">Mesaj Sacru</a></li>
+      <a href="./index.html" rel="noopener noreferrer" id="menu-home">Home</a>
+      <li><b><a href="./curiozitati.html" rel="noopener noreferrer" id="menu-about">Curiozități despre Miciu-Piciu</a></b></li>
+      <li><b><a href="./galerie.html" rel="noopener noreferrer" id="menu-gallery">Galerie Foto</a></b></li>
+      <li><b><a href="./construieste.aminitiri.html" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
+      <li><b><a href="./contact.html" id="menu-contact" rel="noopener noreferrer">Ne găsești aici</a></b></li>
+      <li><a href="./mesaj sacru.html" rel="noopener noreferrer" id="main-message">Mesaj Sacru</a></li>
     </div>
   </div>
   <!-- Limbă fix dreapta sus -->

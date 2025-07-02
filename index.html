@@ -239,15 +239,15 @@
     padding: 0.5rem !important;
   }
 
-  /* --- MODIFICĂRI PENTRU SPAȚIEREA UL LI --- */
+  /* --- Modificările pentru spațierea UL LI (NU afectează poziționarea stânga/dreapta) --- */
   /* Resetează marginile și padding-ul implicit ale listelor */
   .section1 .left ul,
-  .section1 .left ol, /* Includem și ol (ordered list) pentru siguranță */
+  .section1 .left ol,
   .section2 .left ul,
   .section2 .left ol {
-    margin: 0 !important; /* Elimină marginile de sus/jos de la lista în sine */
-    padding: 0 !important; /* Elimină padding-ul din stânga de la lista în sine (care dă indentarea) */
-    list-style: none !important; /* Opțional: Elimină bulinele/numerele dacă nu le vrei pe mobil */
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important; /* Opțional: Elimină bulinele/numerele dacă nu le vrei */
   }
 
   /* Reduce spațiul dintre fiecare element al listei (li) */
@@ -256,18 +256,18 @@
   .section2 .left ul li,
   .section2 .left ol li {
     margin-bottom: 0.2rem !important; /* Ajustează această valoare (ex: 0.1rem, 0.3rem) după cum ai nevoie */
-    padding: 0 !important; /* Asigură-te că nu există padding suplimentar pe elementele listei */
+    padding: 0 !important;
     line-height: 1.2em !important; /* O înălțime de linie puțin mai strânsă pentru textul din elementele listei */
   }
 
   /* Stilurile tale originale pentru a și b din li.
-     Am mutat line-height la li direct, deoarece acolo este mai eficient pentru spațierea verticală a rândurilor. */
+     Am mutat line-height pe li direct, deoarece acolo este mai eficient pentru spațierea verticală a rândurilor. */
   .section1 .left ul li a,
   .section1 .left ul li b {
     font-size: 1em !important;
-    /* line-height: 1.4em !important; <- Acest line-height a fost mutat pe elementul li de mai sus,
-                                          dacă textul Miciu/Mesaj Sacru este doar în <a> sau <b>,
-                                          păstrează-l aici și ajustează-l. */
+    /* line-height: 1.4em !important; <- Acest line-height a fost mutat pe elementul li.
+                                          Dacă totuși vrei un line-height mai mare specific pentru textul din <a> și <b>,
+                                          îl poți reactiva aici și ajusta. */
   }
 
   .section1 .right img,
@@ -283,8 +283,7 @@
     align-items: center;
   }
 
-  /* --- MODIFICĂRI PENTRU PROBLEMA "ACTIVITĂȚI" TĂIATĂ --- */
-  /* Acestea ajută la asigurarea că tot conținutul este vizibil și scrollabil */
+  /* --- Modificările pentru problema "ACTIVITĂȚI" tăiată (NU afectează poziționarea stânga/dreapta) --- */
   body, html {
     overflow-x: hidden; /* Previne scroll-ul orizontal nedorit */
     min-height: 100vh; /* Asigură că corpul documentului ocupă cel puțin toată înălțimea vizibilă */
@@ -292,7 +291,7 @@
 
   /* Adaugă padding la sfârșitul conținutului principal,
      astfel încât partea de jos (ex: "Activități") să nu fie tăiată.
-     Înlocuiește `.main-content-wrapper` cu clasa sau ID-ul real al containerului tău principal de conținut! */
+     IMPORTANT: Înlocuiește `.main-content-wrapper` cu clasa sau ID-ul REAL al containerului tău principal de conținut! */
   .main-content-wrapper {
     padding-bottom: 3rem !important; /* Adaugă spațiu suplimentar la partea de jos pentru a vedea tot conținutul */
     box-sizing: border-box; /* Asigură că padding-ul este inclus în lățimea/înălțimea totală a elementului */

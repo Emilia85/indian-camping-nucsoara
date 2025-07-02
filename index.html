@@ -226,84 +226,57 @@
         }
       
         @media (max-width: 554px) {
-  .section1,
-  .section2 {
-    flex-direction: row !important;
-    gap: 0.5rem !important;
-  }
-  .section1 .left,
-  .section1 .right,
-  .section2 .left,
-  .section2 .right {
-    width: 50% !important;
-    padding: 0.5rem !important;
-  }
-
-  /* --- Modificările pentru spațierea UL LI (NU afectează poziționarea stânga/dreapta) --- */
-  /* Resetează marginile și padding-ul implicit ale listelor */
-  .section1 .left ul,
-  .section1 .left ol,
-  .section2 .left ul,
-  .section2 .left ol {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important; /* Opțional: Elimină bulinele/numerele dacă nu le vrei */
-  }
-
-  /* Reduce spațiul dintre fiecare element al listei (li) */
-  .section1 .left ul li,
-  .section1 .left ol li,
-  .section2 .left ul li,
-  .section2 .left ol li {
-    margin-bottom: 0.2rem !important; /* Ajustează această valoare (ex: 0.1rem, 0.3rem) după cum ai nevoie */
-    padding: 0 !important;
-    line-height: 1.2em !important; /* O înălțime de linie puțin mai strânsă pentru textul din elementele listei */
-  }
-
-  /* Stilurile tale originale pentru a și b din li.
-     Am mutat line-height pe li direct, deoarece acolo este mai eficient pentru spațierea verticală a rândurilor. */
-  .section1 .left ul li a,
-  .section1 .left ul li b {
-    font-size: 1em !important;
-    /* line-height: 1.4em !important; <- Acest line-height a fost mutat pe elementul li.
-                                          Dacă totuși vrei un line-height mai mare specific pentru textul din <a> și <b>,
-                                          îl poți reactiva aici și ajusta. */
-  }
-
-  .section1 .right img,
-  .section2 .left img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 auto !important;
-    display: block;
-  }
-  .section2 .right {
-    display: flex;
-    align-items: center;
-  }
-
-  /* --- Modificările pentru problema "ACTIVITĂȚI" tăiată (NU afectează poziționarea stânga/dreapta) --- */
-  body, html {
-    overflow-x: hidden; /* Previne scroll-ul orizontal nedorit */
-    min-height: 100vh; /* Asigură că corpul documentului ocupă cel puțin toată înălțimea vizibilă */
-  }
-
-  /* Adaugă padding la sfârșitul conținutului principal,
-     astfel încât partea de jos (ex: "Activități") să nu fie tăiată.
-     IMPORTANT: Înlocuiește `.main-content-wrapper` cu clasa sau ID-ul REAL al containerului tău principal de conținut! */
-  .main-content-wrapper {
-    padding-bottom: 3rem !important; /* Adaugă spațiu suplimentar la partea de jos pentru a vedea tot conținutul */
-    box-sizing: border-box; /* Asigură că padding-ul este inclus în lățimea/înălțimea totală a elementului */
-  }
-
-  /* Dacă ai un footer fix (position: fixed), asigură-te că nu suprapune conținutul */
-  footer {
-    position: relative !important; /* Sau ajustează z-index dacă este fix și se suprapune */
-    margin-top: 1rem; /* Adaugă spațiu deasupra footerului */
-  }
+    .section1,
+    .section2 {
+        flex-direction: row !important;
+        gap: 0.5rem !important;
+    }
+    .section1 .left,
+    .section1 .right,
+    .section2 .left,
+    .section2 .right {
+        width: 50% !important;
+        padding: 0.25rem !important;
+        overflow: visible !important;
+    }
+    .section1 .left ul,
+    .section2 .right ul {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .section1 .left ul li,
+    .section2 .right ul li {
+        width: 100% !important;
+        margin: 0.15rem 0 !important;
+        padding: 0.15rem !important;
+    }
+    .section1 .left ul li a,
+    .section1 .left ul li b,
+    .section2 .right ul li a,
+    .section2 .right ul li b {
+        font-size: 1.2em !important;
+        line-height: 1.6em !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 0.15rem !important;
+    }
+    .section1 .right img,
+    .section2 .left img {
+        width: 90% !important;
+        max-width: 250px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        display: block;
+    }
+    .section2 .right {
+        display: flex;
+        align-items: flex-start;
+        padding: 0.25rem !important;
+        flex-direction: column;
+        gap: 0.25rem !important;
+    }
 }
-
     </style>
 </head>
 <body>

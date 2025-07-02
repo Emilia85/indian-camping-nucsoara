@@ -226,55 +226,73 @@
         }
       
         @media (max-width: 554px) {
-    .section1,
+    .section1 {
+        flex-direction: row-reverse !important;
+        gap: 0.5rem !important;
+    }
     .section2 {
         flex-direction: row !important;
         gap: 0.5rem !important;
     }
     .section1 .left,
-    .section1 .right,
-    .section2 .left,
     .section2 .right {
         width: 50% !important;
-        padding: 0.25rem !important;
+        padding: 0.5rem !important;
         overflow: visible !important;
     }
-    .section1 .left ul,
-    .section2 .right ul {
+    .section1 .left ul {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
     }
-    .section1 .left ul li,
-    .section2 .right ul li {
+    .section1 .left ul li {
         width: 100% !important;
-        margin: 0.15rem 0 !important;
-        padding: 0.15rem !important;
+        margin: 0.5rem 0 !important;
+        padding: 0.5rem 0 !important;
     }
     .section1 .left ul li a,
-    .section1 .left ul li b,
-    .section2 .right ul li a,
-    .section2 .right ul li b {
+    .section1 .left ul li b {
+        font-size: 1.4em !important;
+        line-height: 1.6em !important;
+        display: inline !important;
+        padding: 0.25rem !important;
+    }
+    .section1 .left ul li .sub-text {
         font-size: 1.2em !important;
         line-height: 1.6em !important;
-        display: block !important;
-        width: 100% !important;
-        padding: 0.15rem !important;
+        padding-left: 0.5rem !important;
     }
     .section1 .right img,
     .section2 .left img {
-        width: 90% !important;
-        max-width: 250px !important;
+        width: 85% !important;
+        max-width: 230px !important;
         height: auto !important;
         margin: 0 auto !important;
         display: block;
     }
     .section2 .right {
+        width: 50% !important;
+        padding: 0.5rem !important;
         display: flex;
-        align-items: flex-start;
-        padding: 0.25rem !important;
+        align-items: center;
         flex-direction: column;
-        gap: 0.25rem !important;
+    }
+    .section2 .right ul {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .section2 .right ul li {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+        padding: 0.5rem 0 !important;
+    }
+    .section2 .right ul li a,
+    .section2 .right ul li b {
+        font-size: 1.4em !important;
+        line-height: 1.6em !important;
+        display: inline !important;
+        padding: 0.25rem !important;
     }
 }
     </style>

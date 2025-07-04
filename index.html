@@ -242,7 +242,21 @@
                 padding: 0.5rem 0.25rem 0.5rem 0.5rem !important; /* mai mult padding la stânga */
                 overflow: visible !important;
             }
+            .section1 .responsive {
+                width: 250px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
 
+            .section1 .left ul{
+                font-family: 'Lobster', cursive;
+                font-size: 1.25em;
+                font-weight: normal;
+                list-style-position: outside; /* Asta este cheia pentru bulină corectă */
+                margin-left: 1.2em;  /* mic spațiu la stânga */
+                padding-left: 0.5em;
+            }
             .section1 .left ul,
             .section2 .right ul {
                 margin: 0 !important;
@@ -250,7 +264,11 @@
                 list-style-position: inside !important;
                 padding-left: 1rem !important; /* mută textul puțin mai în stânga */
             }
-
+            .section1 .left ul li{
+                display: list-item; /* nu flex sau block! */
+                margin-bottom: 0.25em;
+                line-height: 1.2;
+            }
             .section1 .left ul li,
             .section2 .right ul li {
                 margin: 0.5rem 0 !important;

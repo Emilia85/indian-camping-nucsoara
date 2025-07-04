@@ -230,52 +230,49 @@
                 flex-direction: row-reverse !important;
                 gap: 0.5rem !important;
             }
-
             .section2 {
                 flex-direction: row !important;
                 gap: 0.5rem !important;
             }
-
             .section1 .left,
+            .section1 .right,
+            .section2 .left,
             .section2 .right {
                 width: 50% !important;
-                padding: 0.5rem 0.25rem 0.5rem 0.5rem !important; /* mai mult padding la stânga */
+                padding: 0.5rem 0.25rem 0.5rem 0.5rem !important;
                 overflow: visible !important;
             }
-            .section1 .responsive {
-                width: 250px;
+    
+            .section1 .right img,
+            .section2 .left img {
+                width: 250px !important;
                 height: auto;
                 display: block;
                 margin: 0 auto;
+                object-fit: cover;
             }
 
-            .section1 .left ul{
+            .section1 .left ul,
+            .section2 .right ul {
                 font-family: 'Lobster', cursive;
                 font-size: 1.25em;
                 font-weight: normal;
-                list-style-position: outside; /* Asta este cheia pentru bulină corectă */
-                margin-left: 1.2em;  /* mic spațiu la stânga */
-                padding-left: 0.5em;
-            }
-            .section1 .left ul,
-            .section2 .right ul {
+                list-style-position: inside;
                 margin: 0 !important;
                 padding: 0 !important;
-                list-style-position: inside !important;
-                padding-left: 1rem !important; /* mută textul puțin mai în stânga */
-            }
-            .section1 .left ul li{
-                display: list-item; /* nu flex sau block! */
-                margin-bottom: 0.25em;
-                line-height: 1.2;
-            }
-            .section1 .left ul li,
-            .section2 .right ul li {
-                margin: 0.5rem 0 !important;
-                padding: 0.25rem 0 !important;
+                padding-left: 0.5rem !important;
             }
 
-            .section1 .left ul li::marker {
+            .section1 .left ul li,
+            .section2 .right ul li {
+                display: list-item;
+                margin: 0.5rem 0 !important;
+                padding: 0.25rem 0 !important;
+                line-height: 1.2;
+            }
+
+            .section1 .left ul li::marker,
+            .section2 .right ul li::marker {
                 font-size: 1.2em;
                 margin-right: 0.5rem;
             }
@@ -284,7 +281,7 @@
             .section1 .left ul li b,
             .section2 .right ul li a,
             .section2 .right ul li b {
-                font-size: 1em !important; /* egal cu "Mesaj sacru" */
+                font-size: 1em !important;
                 line-height: 1.4em !important;
                 display: inline !important;
                 padding-left: 0.25rem !important;
@@ -295,16 +292,7 @@
                 padding-left: 0.5rem !important;
             }
 
-            .section1 .right img {
-                width: 95% !important;
-                max-width: 280px !important;
-            }
-
-            .section2 .left img {
-                width: 95% !important;
-                max-width: 250px !important;
-            }
-
+            .section1 .right,
             .section2 .right {
                 display: flex;
                 align-items: center;
@@ -312,7 +300,6 @@
                 padding: 0.5rem !important;
             }
         }
-
     </style>
 </head>
 <body>

@@ -226,69 +226,75 @@
         }
       
         @media (max-width: 554px) {
-    .section1 {
-        flex-direction: row-reverse !important;
-        gap: 0.5rem !important;
-    }
-    .section2 {
-        flex-direction: row !important;
-        gap: 0.5rem !important;
-    }
-    .section1 .left,
-    .section2 .right {
-        width: 50% !important;
-        padding: 0.5rem !important;
-        overflow: visible !important;
-    }
-    .section1 .left ul,
-    .section2 .right ul {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        list-style-position: inside !important;
-        padding-left: 0.5rem !important;  /* Added this for bullet point spacing */
-    }
-    .section1 .left ul li,
-    .section2 .right ul li {
-        width: 100% !important;
-        margin: 0.5rem 0 !important;
-        padding: 0.5rem 0 !important;
-    }
-    .section1 .left ul li a,
-    .section1 .left ul li b,
-    .section2 .right ul li a,
-    .section2 .right ul li b {
-        font-size: 1.2em !important;
-        line-height: 1.4em !important;
-        display: inline !important;
-        padding: 0.25rem !important;
-    }
-    .section1 .left ul li .sub-text {
-        font-size: 0.5em !important;
-        line-height: 1.4em !important;
-        padding-left: 0.5rem !important;
-    }
-    .section1 .right img{
-        width: 85% !important;
-        max-width: 270px !important;
-    }
+            .section1 {
+                flex-direction: row-reverse !important;
+                gap: 0.5rem !important;
+            }
 
-    .section1 .right img,
-    .section2 .left img {
-        width: 85% !important;
-        max-width: 230px !important;
-        height: auto !important;
-        margin: 0 auto !important;
-        display: block;
-    }
-    .section2 .right {
-        width: 50% !important;
-        padding: 0.5rem !important;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-}
+            .section2 {
+                flex-direction: row !important;
+                gap: 0.5rem !important;
+            }
+
+            .section1 .left,
+            .section2 .right {
+                width: 50% !important;
+                padding: 0.5rem 0.25rem 0.5rem 0.5rem !important; /* mai mult padding la stânga */
+                overflow: visible !important;
+            }
+
+            .section1 .left ul,
+            .section2 .right ul {
+                margin: 0 !important;
+                padding: 0 !important;
+                list-style-position: inside !important;
+                padding-left: 1rem !important; /* mută textul puțin mai în stânga */
+            }
+
+            .section1 .left ul li,
+            .section2 .right ul li {
+                margin: 0.5rem 0 !important;
+                padding: 0.25rem 0 !important;
+            }
+
+            .section1 .left ul li::marker {
+                font-size: 1.2em;
+                margin-right: 0.5rem;
+            }
+
+            .section1 .left ul li a,
+            .section1 .left ul li b,
+            .section2 .right ul li a,
+            .section2 .right ul li b {
+                font-size: 1em !important; /* egal cu "Mesaj sacru" */
+                line-height: 1.4em !important;
+                display: inline !important;
+                padding-left: 0.25rem !important;
+            }
+
+            .section1 .left ul li .sub-text {
+                font-size: 0.65em !important;
+                padding-left: 0.5rem !important;
+            }
+
+            .section1 .right img {
+                width: 95% !important;
+                max-width: 280px !important;
+            }
+
+            .section2 .left img {
+                width: 95% !important;
+                max-width: 250px !important;
+            }
+
+            .section2 .right {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0.5rem !important;
+            }
+        }
+
     </style>
 </head>
 <body>

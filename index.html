@@ -226,25 +226,18 @@
         }
       
         @media (max-width: 554px) {
-            .section1 {
-                flex-direction: row-reverse !important;
-                gap: 0.5rem !important;
-            }
-            .section2 {
-                flex-direction: row !important;
-                gap: 0.5rem !important;
-            }
-            .section1 .left,
-            .section1 .right,
-            .section2 .left,
-            .section2 .right {
-                width: 50% !important;
-                padding: 0.5rem 0.25rem 0.5rem 0.5rem !important;
-                overflow: visible !important;
-            }
     
-            .section1 .right img,
             .section2 .left img {
+                /* PĂSTRĂM setările existente care funcționează bine */
+                width: 250px !important;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                object-fit: cover;
+            }
+            
+            .section1 .right img {
+                /* Aplicăm ACELEAȘI setări ca pentru section2 */
                 width: 250px !important;
                 height: auto;
                 display: block;
@@ -252,10 +245,11 @@
                 object-fit: cover;
             }
 
+            /* UNIFORMIZARE LISTE ȘI TEXT */
             .section1 .left ul,
             .section2 .right ul {
                 font-family: 'Lobster', cursive;
-                font-size: 1.25em;
+                font-size: 1.1em !important; /* Dimensiune identică */
                 font-weight: normal;
                 list-style-position: inside;
                 margin: 0 !important;
@@ -268,12 +262,16 @@
                 display: list-item;
                 margin: 0.5rem 0 !important;
                 padding: 0.25rem 0 !important;
-                line-height: 1.2;
+                line-height: 1.4;
+                /* Distanță identică buline-text */
+                padding-left: 0.8rem !important;
+                text-indent: -0.8rem;
             }
 
             .section1 .left ul li::marker,
             .section2 .right ul li::marker {
-                font-size: 1.2em;
+                font-size: 1.3em;
+                color: #333;
                 margin-right: 0.5rem;
             }
 
@@ -285,19 +283,23 @@
                 line-height: 1.4em !important;
                 display: inline !important;
                 padding-left: 0.25rem !important;
+                font-weight: normal;
             }
 
+            /* BONUS: Corecție pentru textul mic (sub-text) */
             .section1 .left ul li .sub-text {
-                font-size: 0.65em !important;
-                padding-left: 0.5rem !important;
+                font-size: 0.75em !important; /* Mărit față de 0.65em */
+                padding-left: 1rem !important; /* Aliniere îmbunătățită */
+                display: block; /* Trece pe linie nouă */
+                text-indent: 0; /* Resetează indentarea */
+                margin-top: 0.2rem; /* Spațiu mic de separare */
             }
 
             .section1 .right,
             .section2 .right {
                 display: flex;
-                align-items: center;
+                justify-content: center;
                 flex-direction: column;
-                padding: 0.5rem !important;
             }
         }
     </style>

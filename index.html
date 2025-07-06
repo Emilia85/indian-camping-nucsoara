@@ -254,7 +254,8 @@
                 list-style-position: inside;
                 margin: 0 !important;
                 padding: 0 !important;
-                padding-left: 0.5rem !important;
+                padding-left: 1.5rem !important;
+                margin-left: 0.5rem  !important;
             }
 
             .section1 .left ul li,
@@ -301,6 +302,31 @@
                 justify-content: center;
                 flex-direction: column;
             }
+            /* 1. MĂRIRE POZĂ SECTION1 */
+            .section1 .right img {
+                width: 280px !important; /* Crește dimensiunea cu 30px */
+                max-width: 100%; /* Asigură că nu depășește containerul */
+            }
+            
+            /* 2. DEPĂRTARE BULINĂ SECTION2 */
+            .section2 .right ul {
+                padding-left: 1.8rem !important; /* Spațiu mai mare la stânga */
+                margin-left: 0.7rem !important;   /* Offset suplimentar */
+            }
+            
+            /* 3. UNIFORMIZARE SPAȚIERE TEXT-BULINĂ */
+            .section1 .left ul li,
+            .section2 .right ul li {
+                padding-left: 1.3rem !important;  /* Crește spațiul pentru buline */
+                text-indent: -1.3rem;             /* Compensare pentru aliniere */
+            }
+            
+            /* 4. AJUSTARE TEXT MIC (OPȚIONAL) */
+            .section1 .left ul li .sub-text {
+                padding-left: 1.5rem !important; /* Aliniere îmbunătățită */
+                margin-top: 0.4rem;              /* Spațiu mai mare deasupra */
+            }
+
         }
     </style>
 </head>

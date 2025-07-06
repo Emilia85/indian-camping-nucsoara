@@ -330,12 +330,27 @@
                 padding-left: 8px;
             }
 
-            .section1 img {
-                width: 500px;
-                max-width: 80%;
+            .section1 .right img {
+                width: 450px;
+                max-width: 100%;
                 height: auto;
+                display: block;
+            }
+            .right li::before {
+                content: '●';
+                color: black;
+                font-size: 1.2em;
+                position: absolute;
+                left: -15px;
+                top: 30%;
+                transform: translateY(-50%);
             }
         }
+        @media  (max-width: 554px) {
+            .section1 .right img {
+                width: 320px !important;
+            }
+        } 
     </style>
 </head>
 <body>

@@ -211,82 +211,63 @@
       background: #fff;
       transition: transform 0.4s ease;
     }
-    /*@media(min-width: 768px) {
-      .image-container img {
-        width: 200px;
-      }
-      .image-container img:hover {
-        transform: scale(1.1);
-      }
-    }
-    .highlighted-activity {
-      margin-top: -10px;
-      margin-left: 50px;
-      font-size: 1em;
-      color: #555;
-      font-family: Georgia, serif;
-      text-shadow: 2px 4px 12px #aaa;
-      position: relative;
-      padding-left: 20px;
-    }
-    .highlighted-activity::before {
-      content: '●';
-      position: absolute;
-      left: -10px;
-      top: -2px;
-      color: #555;
-      font-size: 1.3em;
-      text-shadow: 2px 4px 12px #aaa;
-    }*/
+   
     @media (max-width: 554px) {
     /* Force desktop layout */
-    .container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      max-width: 1000px;
-      width: 100%;
-      padding: 20px;
-      margin: 70px auto 0 auto;
-      position: relative;
-      z-index: 1;
+      .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 1000px;
+        width: 100%;
+        padding: 20px;
+        margin: 70px auto 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .menu {
+          gap: 0;
+          font-size: 1.2em;
+          white-space: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+      }
+      .menu a {
+          padding: 0 2px;
+      }
+      .menu::-webkit-scrollbar {
+          display: none;
+      }
+      .navbar {
+          font-size: 1.1em;
+          padding: 8px 8px 8px 4px;
+          white-space: nowrap;
+      }
+      .globe-icon {
+          width: 56px;
+      }
+      .image-container img {
+          width: 300px !important; /* Keep desktop size */
+      }
+      
+      /* Prevent mobile-specific changes */
+      .image-container img:hover {
+          transform: scale(1.1) !important;
+      }
+      .highlighted-activity {
+          margin-left: 50px !important; /* Keep desktop margin */
+          font-size: 2em !important; /* Keep desktop font size */
+      }
+      .highlighted-activity::before {
+          font-size: 1.5em !important; /* Keep desktop bullet size */
+      }
+      h1, h2, h3 {
+          font-size: 1.5em !important;
+      }
+      p, span {
+          font-size: 1.1em !important;
+      }
     }
-    .menu {
-        gap: 0;
-        font-size: 1em;
-        white-space: nowrap;
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
-    .menu a {
-        padding: 0 2px;
-    }
-    .menu::-webkit-scrollbar {
-        display: none;
-    }
-    .navbar {
-        padding: 8px 8px 8px 4px;
-        white-space: nowrap;
-    }
-    .globe-icon {
-        width: 56px;
-    }
-    .image-container img {
-        width: 300px !important; /* Keep desktop size */
-    }
-    
-    /* Prevent mobile-specific changes */
-    .image-container img:hover {
-        transform: scale(1.1) !important;
-    }
-    .highlighted-activity {
-        margin-left: 50px !important; /* Keep desktop margin */
-        font-size: 1.7em !important; /* Keep desktop font size */
-    }
-    .highlighted-activity::before {
-        font-size: 1.3em !important; /* Keep desktop bullet size */
-    }
-}
   </style>
 </head>
 <body>

@@ -46,267 +46,176 @@
           margin-bottom: 30px;
           margin-top: auto;
         }
-        /*.navbar {
+      .navbar {
           position: fixed;
           top: 0;
           left: 0;
           background: #f3f3f3;
-          padding: 12px 24px 12px 8px;
+          padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
           border-bottom-right-radius: 18px;
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
           z-index: 1000;
           display: flex;
           align-items: center;
-          min-width: 220px;
-        }
-        .menu {
+          width: 100%;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+      }
+      .navbar::-webkit-scrollbar { display: none; }
+    
+      .menu {
           display: flex;
-          gap: 20px;
+          gap: 4px;
           font-size: 1em;
           font-weight: bold;
-          margin-left: 0;
-        }
-        .menu a {
+          align-items: flex-end;
+          white-space: nowrap;      
+      }
+      .menu a {
           text-decoration: none;
           color: #555;
           font-family: Georgia, serif;
-        }
+          padding: 0 8px;
+      }
+      .sub-text {
+          font-size: 0.7em;
+          font-weight: normal;
+          margin-left: 2px;
+      }
+
       .language-interface {
-        position: fixed;
-        top: 0;
-        right: 0;
-        pointer-events: none;
-        z-index: 999;
+          position: fixed;
+          top: 0; right: 0;
+          z-index: 2000;
       }
       .globe-icon-container {
-        position: absolute;
-        top: 10px;
-        right: 5px;
-        z-index: 1000;
-        pointer-events: auto;
-        padding-bottom: 10px;
+          position: fixed;
+          top: 10px; right: 10px;
+          z-index: 2100;
+          pointer-events: auto;
       }
       .globe-icon {
-        width: 80px;
-        cursor: pointer;
-        filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+          width: 60px;
+          cursor: pointer;
       }
       .language-flags {
-        position: absolute;
-        top: 0;
-        right: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease-in-out;
-        width: 160px;
-        height: 160px;
-        transform: translate(0%, 0%);
+          position: absolute;
+          top: 0; right: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease-in-out;
+          width: 160px; height: 160px;
       }
-      .language-flags.visible {
-        pointer-events: auto;
+      .language-flags.visible { 
+          pointer-events: auto; 
       }
       .language-flags img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        box-shadow: 0 0 8px rgba(0,0,0,0.3);
-        cursor: pointer;
-        position: absolute;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(0,0,0,0.3);
+          cursor: pointer;
+          position: absolute;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          opacity: 0; 
+          transform: scale(0.5); 
       }
-      .language-flags.visible #flag-it {
-        top: 10px;
-        left: 10px;
-        opacity: 1;
-        transform: scale(1);
+      .language-flags.visible img {
+          opacity: 1;
+          transform: scale(1);
       }
-      .language-flags.visible #flag-uk {
-        top: 90px;
-        left: -10px;
-        opacity: 1;
-        transform: scale(1);
-      }
-      .language-flags.visible #flag-ro {
-        bottom: -10px;
-        right: 20px;
-        opacity: 1;
-        transform: scale(1);
-      }
-      .language-flags #flag-it,
-      .language-flags #flag-uk,
-      .language-flags #flag-ro {
-        opacity: 0;
-        transform: scale(0.5);
-      }*/
-      .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: #f3f3f3;
-      padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
-      border-bottom-right-radius: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      box-sizing: border-box;
-      white-space: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .navbar::-webkit-scrollbar { display: none; }
-    
-    .menu {
-      display: flex;
-      gap: 4px;
-      font-size: 1em;
-      font-weight: bold;
-      align-items: flex-end;
-      white-space: nowrap;      
-    }
-    .menu a {
-      text-decoration: none;
-      color: #555;
-      font-family: Georgia, serif;
-      padding: 0 8px;
-    }
-    .sub-text {
-      font-size: 0.7em;
-      font-weight: normal;
-      margin-left: 2px;
-    }
 
-    .language-interface {
-      position: fixed;
-      top: 0; right: 0;
-      z-index: 2000;
-    }
-    .globe-icon-container {
-      position: fixed;
-      top: 10px; right: 10px;
-      z-index: 2100;
-      pointer-events: auto;
-    }
-    .globe-icon {
-      width: 60px;
-      cursor: pointer;
-    }
-    .language-flags {
-      position: absolute;
-      top: 0; right: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-      width: 160px; height: 160px;
-    }
-    .language-flags.visible { 
-        pointer-events: auto; 
-    }
-    .language-flags img {
-        width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-      cursor: pointer;
-      position: absolute;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-      opacity: 0; 
-      transform: scale(0.5); 
-    }
-    .language-flags.visible img {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Reguli care poziționează fiecare steag individual */
-    .language-flags.visible #flag-it { top: 10px; left: 10px; }
-    .language-flags.visible #flag-uk { top: 90px; left: -10px; }
-    .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
-      .twoColumns {
-        display: flex;
-        gap: 28px;
-        flex-direction: row;
-        justify-content: space-between;
-        resize: both;
-        overflow: auto;
-        background-color: #eee;
-      }
+      /* Reguli care poziționează fiecare steag individual */
+      .language-flags.visible #flag-it { top: 10px; left: 10px; }
+      .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+      .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+        .twoColumns {
+          display: flex;
+          gap: 28px;
+          flex-direction: row;
+          justify-content: space-between;
+          resize: both;
+          overflow: auto;
+          background-color: #eee;
+        }
 
       .responsive,
       .right {
-        max-width: 50%;
-        flex: 1 1 50%;
-        word-break: break-word;
+          max-width: 50%;
+          flex: 1 1 50%;
+          word-break: break-word;
       }
       .bloc-text {
-            max-width: 800px;
-            margin: 40px auto 20px auto;
-            font-size: 1.2em;
-            line-height: 1.5;
+          max-width: 800px;
+          margin: 40px auto 20px auto;
+          font-size: 1.2em;
+          line-height: 1.5;
             
       }
       .bloc-img {
-        display: block;
-        max-width: 800px;
-        width: 100%;
-        margin: 0 auto 60px auto;
-        border-radius: 8px;
+          display: block;
+          max-width: 800px;
+          width: 100%;
+          margin: 0 auto 60px auto;
+          border-radius: 8px;
       }
       .language-interface {
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 2000;
+          position: fixed;
+          top: 0;
+          right: 0;
+          z-index: 2000;
       }
       .globe-icon-container {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 2100;
-        pointer-events: auto;
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          z-index: 2100;
+          pointer-events: auto;
       }
       .globe-icon {
-        width: 60px;
-        cursor: pointer;
-        filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+          width: 60px;
+          cursor: pointer;
+          filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
       }
       .language-flags {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transition: opacity 0.3s ease-in-out;
-        width: 160px;
-        height: 160px;
-        pointer-events: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+          transition: opacity 0.3s ease-in-out;
+          width: 160px;
+          height: 160px;
+          pointer-events: none;
       }
       .language-flags.visible {
-        pointer-events: auto;
+          pointer-events: auto;
       }
       .language-flags img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        box-shadow: 0 0 8px rgba(0,0,0,0.3);
-        cursor: pointer;
-        position: absolute;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(0,0,0,0.3);
+          cursor: pointer;
+          position: absolute;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
       }
       .language-flags.visible #flag-it {
-        top: 10px;
-        left: 10px;
-        opacity: 1;
-        transform: scale(1);
+          top: 10px;
+          left: 10px;
+          opacity: 1;
+          transform: scale(1);
       }
       .language-flags.visible #flag-uk {
-        top: 90px;
-        left: -10px;
-        opacity: 1;
-        transform: scale(1);
+          top: 90px;
+          left: -10px;
+          opacity: 1;
+          transform: scale(1);
       }
       .language-flags.visible #flag-ro {
-        bottom: -10px;
-        right: 20px;
-        opacity: 1;
-        transform: scale(1);
+          bottom: -10px;
+          right: 20px;
+          opacity: 1;
+          transform: scale(1);
       }
       .language-flags #flag-it,
       .language-flags #flag-uk,
@@ -314,22 +223,7 @@
         opacity: 0;
         transform: scale(0.5);
       }
-      @media (max-width: 420px) {
-       /* .navbar {
-            padding: 8px 60px 8px 4px;
-        }
-        .menu {
-            gap: 2px;
-            font-size: 0.85em;
-            flex-wrap: wrap;  
-            justify-content: center;  
-        }
-        .menu a {
-            padding: 4px 8px;  
-            margin: 2px;  
-            white-space: nowrap;  
-        }
-            */
+     /* @media (max-width: 420px) {
         .twoColumns {
             flex-direction: column;
             gap: 20px;
@@ -359,7 +253,7 @@
         h3 {
             font-size: 1.2em;
         }
-      }
+      }*/
     </style>
      </style>
     </head>

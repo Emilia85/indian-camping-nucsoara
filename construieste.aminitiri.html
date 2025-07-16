@@ -6,102 +6,102 @@
   <title>Ateliere de creație</title>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Lobster', cursive;
-      background-color: white;
-      text-align: center;
-      padding: 20px;
-      min-width: 375px;
-    }
-    .page-title, .page-subtitle, .page-section-title {
-      font-family: 'Lobster', cursive;
-      text-align: center;
-      color: black;
-    }
-    .page-title { /* h1 */
-      font-size: 3.2em;
-      margin-top: 20px;
-      margin-bottom: 0;
-    }
-    .page-subtitle { /* h2 */
-      font-size: 1.9em;
-      color: black;
-      margin-top: 20px;
-      margin-bottom: 40px; /* Spațiu mai mare înainte de h3 */
-    }
+      body {
+          font-family: 'Lobster', cursive;
+          background-color: white;
+          text-align: center;
+          padding: 20px;
+          min-width: 375px;
+      }
+      .page-title, .page-subtitle, .page-section-title {
+          font-family: 'Lobster', cursive;
+          text-align: center;
+          color: black;
+      }
+      .page-title { /* h1 */
+          font-size: 3.2em;
+          margin-top: 20px;
+          margin-bottom: 0;
+      }
+      .page-subtitle { /* h2 */
+          font-size: 1.9em;
+          color: black;
+          margin-top: 20px;
+          margin-bottom: 40px; /* Spațiu mai mare înainte de h3 */
+      }
 
-    .text-style {
-    font-family: 'Lobster', cursive;
-    font-size: 2em; /* ajustează mărimea după preferință */
-    color: black;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* umbra */
-    transform: rotate(-3deg); /* înclinarea textului */
-   }
-   
-    .section {
-      margin: 50px 0;
+      .text-style {
+          font-family: 'Lobster', cursive;
+          font-size: 2em; /* ajustează mărimea după preferință */
+          color: black;
+          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* umbra */
+          transform: rotate(-3deg); /* înclinarea textului */
     }
+    
+      .section {
+          margin: 50px 0;
+      }
 
-    .row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-top: 20px;
-    }
+      .row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 40px;
+          margin-top: 20px;
+      }
 
-    .image-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 200px;
-    }
-    .rotated-left, .rotated-right {
-      max-width: 140px; 
-    }
+      .image-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 200px;
+      }
+      .rotated-left, .rotated-right {
+          max-width: 140px; 
+      }
 
-    .image-box img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+      .image-box img {
+          width: 100%;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
 
-    .caption {
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: 500;
-      text-shadow: 1px 1px 3px #00000033;
-    }
-    .caption-wood {
-        margin-top: -15px; 
-        font-family: 'Lobster', cursive; 
-        font-size: 2em; 
-        color: black;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
-        transform: rotate(-3deg); 
-        background: none; 
-        box-shadow: none; 
+      .caption {
+          margin-top: 10px;
+          font-size: 18px;
+          font-weight: 500;
+          text-shadow: 1px 1px 3px #00000033;
+      }
+      .caption-wood {
+          margin-top: -15px; 
+          font-family: 'Lobster', cursive; 
+          font-size: 2em; 
+          color: black;
+          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
+          transform: rotate(-3deg); 
+          background: none; 
+          box-shadow: none; 
 
-    }
-    .three-image-row {
-        gap: 20px; 
-        align-items: flex-start; 
-    }
+      }
+      .three-image-row {
+          gap: 20px; 
+          align-items: flex-start; 
+      }
 
-    .three-image-row .image-box:not(.rotated-left):not(.rotated-right) {
-        max-width: 250px; 
-        margin-top: 50px; 
-    }
-    .rotated-left img {
-        transform: rotate(-10deg);
-    }
+      .three-image-row .image-box:not(.rotated-left):not(.rotated-right) {
+          max-width: 250px; 
+          margin-top: 50px; 
+      }
+      .rotated-left img {
+          transform: rotate(-10deg);
+      }
 
-    .rotated-right img {
-        transform: rotate(10deg);
-    }
+      .rotated-right img {
+          transform: rotate(10deg);
+      }
 
-    .terariu-label {
+      .terariu-label {
           font-size: 16px;
           background: white;
           padding: 4px 12px;
@@ -109,119 +109,133 @@
           box-shadow: 0 4px 8px rgba(0,0,0,0.1);
           font-weight: bold;
           margin: 5px 0;
-    }
+      }
 
-    .terariu-row {
+      .terariu-row {
           display: flex;
           justify-content: center;
           gap: 30px;
           align-items: center;
           margin-bottom: 10px;
-    }
-   
-    .terariu-caption {
-        margin-top: 20px;
-        font-family: 'Lobster', cursive; 
-        font-size: 2em; 
-        color: black;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
-        transform: rotate(-3deg); 
-        background: none; 
-        box-shadow: none; 
-        white-space: pre-line;
-        line-height: 1.2;       
-        text-align: center;     
-        padding: 0 20px;       
-    }
-    .terariu-row .image-box {
-        max-width: 170px; 
-    }
+      }
     
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: #f3f3f3;
-      padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
-      border-bottom-right-radius: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      box-sizing: border-box;
-      white-space: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .navbar::-webkit-scrollbar { display: none; }
-    
-    .menu {
-      display: flex;
-      gap: 4px;
-      font-size: 1em;
-      font-weight: bold;
-      align-items: flex-end;
-      white-space: nowrap;      
-    }
-    .menu a {
-      text-decoration: none;
-      color: #555;
-      font-family: Georgia, serif;
-      padding: 0 8px;
-    }
-    .sub-text {
-      font-size: 0.7em;
-      font-weight: normal;
-      margin-left: 2px;
-    }
+      .terariu-caption {
+          margin-top: 20px;
+          font-family: 'Lobster', cursive; 
+          font-size: 2em; 
+          color: black;
+          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
+          transform: rotate(-3deg); 
+          background: none; 
+          box-shadow: none; 
+          white-space: pre-line;
+          line-height: 1.2;       
+          text-align: center;     
+          padding: 0 20px;       
+      }
+      .terariu-row .image-box {
+          max-width: 170px; 
+      }
+      
+      .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: #f3f3f3;
+          padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
+          border-bottom-right-radius: 18px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+      }
+      .navbar::-webkit-scrollbar { display: none; }
+      
+      .menu {
+          display: flex;
+          gap: 4px;
+          font-size: 1em;
+          font-weight: bold;
+          align-items: flex-end;
+          white-space: nowrap;      
+      }
+      .menu a {
+          text-decoration: none;
+          color: #555;
+          font-family: Georgia, serif;
+          padding: 0 8px;
+      }
+      .sub-text {
+          font-size: 0.7em;
+          font-weight: normal;
+          margin-left: 2px;
+      }
 
-    .language-interface {
-      position: fixed;
-      top: 0; right: 0;
-      z-index: 2000;
-    }
-    .globe-icon-container {
-      position: fixed;
-      top: 10px; right: 10px;
-      z-index: 2100;
-      pointer-events: auto;
-    }
-    .globe-icon {
-      width: 60px;
-      cursor: pointer;
-    }
-    .language-flags {
-      position: absolute;
-      top: 0; right: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-      width: 160px; height: 160px;
-    }
-    .language-flags.visible { 
-        pointer-events: auto; 
-    }
-    .language-flags img {
-        width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-      cursor: pointer;
-      position: absolute;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-      opacity: 0; 
-      transform: scale(0.5); 
-    }
-    .language-flags.visible img {
-      opacity: 1;
-      transform: scale(1);
-    }
+      .language-interface {
+          position: fixed;
+          top: 0; right: 0;
+          z-index: 2000;
+      }
+      .globe-icon-container {
+          position: fixed;
+          top: 10px; right: 10px;
+          z-index: 2100;
+          pointer-events: auto;
+      }
+      .globe-icon {
+          width: 60px;
+          cursor: pointer;
+      }
+      .language-flags {
+          position: absolute;
+          top: 0; right: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease-in-out;
+          width: 160px; height: 160px;
+      }
+      .language-flags.visible { 
+          pointer-events: auto; 
+      }
+      .language-flags img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(0,0,0,0.3);
+          cursor: pointer;
+          position: absolute;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          opacity: 0; 
+          transform: scale(0.5); 
+      }
+      .language-flags.visible img {
+          opacity: 1;
+          transform: scale(1);
+      }
 
-    /* Reguli care poziționează fiecare steag individual */
-    .language-flags.visible #flag-it { top: 10px; left: 10px; }
-    .language-flags.visible #flag-uk { top: 90px; left: -10px; }
-    .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+      /* Reguli care poziționează fiecare steag individual */
+      .language-flags.visible #flag-it { top: 10px; left: 10px; }
+      .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+      .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+     
+      @media screen and (max-width: 428px) {
+        .row, .three-image-row, .terariu-row {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
+        .image-box {
+            flex: 1 1 100%;
+        }
+
+        .rotated-left, .rotated-right {
+            max-width: 100%;
+        }
+      }
 
   </style>
 </head>

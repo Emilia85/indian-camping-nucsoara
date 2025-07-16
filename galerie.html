@@ -34,26 +34,24 @@
         margin-top: 30px;
     }
     .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: #f3f3f3;
-        padding: 12px 90px 12px 8px;
-        border-bottom-right-radius: 18px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        min-width: 220px;
-        width: 100vw;
-        box-sizing: border-box;
-        white-space: nowrap;      /* ADĂUGAT */
-        overflow-x: auto;         /* ADĂUGAT */
-        scrollbar-width: none;    /* Firefox */
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: #f3f3f3;
+          padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
+          border-bottom-right-radius: 18px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
       }
-    .navbar::-webkit-scrollbar {
-      display: none;            /* Chrome, Safari */
-    }
+      .navbar::-webkit-scrollbar { display: none; }
+    
     .menu {
           display: flex;
           gap: 4px;

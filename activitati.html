@@ -6,306 +6,293 @@
   <title>Activități</title>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Georgia, serif;
-      background: white;
-      padding-top: 50px;
-      min-width: 375px;
-    }
-    h1, h2 {
-      text-align: center;
-      font-family: 'Lobster', cursive, Georgia, serif;
-      margin-top: 30px;
-      margin-bottom: 0;
-      z-index: 2;
-      position: relative;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 1.5em;
-      margin-bottom: 30px;
-      margin-top: auto;
-      text-align: center;
-    }
+      body {
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, serif;
+          background: white;
+          padding-top: 50px;
+          min-width: 375px;
+      }
+      h1, h2 {
+          text-align: center;
+          font-family: 'Lobster', cursive, Georgia, serif;
+          margin-top: 30px;
+          margin-bottom: 0;
+          z-index: 2;
+          position: relative;
+      }
+      h1 {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+          text-align: center;
+      }
+      h2 {
+          font-size: 1.5em;
+          margin-bottom: 30px;
+          margin-top: auto;
+          text-align: center;
+      }
     
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: #f3f3f3;
-      padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
-      border-bottom-right-radius: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      box-sizing: border-box;
-      white-space: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .navbar::-webkit-scrollbar { display: none; }
-    
-    .menu {
-      display: flex;
-      gap: 4px;
-      font-size: 1em;
-      font-weight: bold;
-      align-items: flex-end;
-      white-space: nowrap;      
-    }
-    .menu a {
-      text-decoration: none;
-      color: #555;
-      font-family: Georgia, serif;
-      padding: 0 8px;
-    }
-    .sub-text {
-      font-size: 0.7em;
-      font-weight: normal;
-      margin-left: 2px;
-    }
+      .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: #f3f3f3;
+          padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
+          border-bottom-right-radius: 18px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+      }
+      .navbar::-webkit-scrollbar { display: none; }
+      
+      .menu {
+          display: flex;
+          gap: 4px;
+          font-size: 1em;
+          font-weight: bold;
+          align-items: flex-end;
+          white-space: nowrap;      
+      }
+      .menu a {
+          text-decoration: none;
+          color: #555;
+          font-family: Georgia, serif;
+          padding: 0 8px;
+      }
+      .sub-text {
+          font-size: 0.7em;
+          font-weight: normal;
+          margin-left: 2px;
+      }
 
-    .language-interface {
-      position: fixed;
-      top: 0; right: 0;
-      z-index: 2000;
-    }
-    .globe-icon-container {
-      position: fixed;
-      top: 10px; right: 10px;
-      z-index: 2100;
-      pointer-events: auto;
-    }
-    .globe-icon {
-      width: 60px;
-      cursor: pointer;
-    }
-    .language-flags {
-      position: absolute;
-      top: 0; right: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-      width: 160px; height: 160px;
-    }
-    .language-flags.visible { 
-        pointer-events: auto; 
-    }
-    .language-flags img {
-        width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-      cursor: pointer;
-      position: absolute;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-      opacity: 0; 
-      transform: scale(0.5); 
-    }
-    .language-flags.visible img {
-      opacity: 1;
-      transform: scale(1);
-    }
+      .language-interface {
+          position: fixed;
+          top: 0; right: 0;
+          z-index: 2000;
+      }
+      .globe-icon-container {
+          position: fixed;
+          top: 10px; right: 10px;
+          z-index: 2100;
+          pointer-events: auto;
+      }
+      .globe-icon {
+          width: 60px;
+          cursor: pointer;
+      }
+      .language-flags {
+          position: absolute;
+          top: 0; right: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease-in-out;
+          width: 160px; height: 160px;
+      }
+      .language-flags.visible { 
+          pointer-events: auto; 
+      }
+      .language-flags img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(0,0,0,0.3);
+          cursor: pointer;
+          position: absolute;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          opacity: 0; 
+          transform: scale(0.5); 
+      }
+      .language-flags.visible img {
+          opacity: 1;
+          transform: scale(1);
+      }
 
-    /* Reguli care poziționează fiecare steag individual */
-    .language-flags.visible #flag-it { top: 10px; left: 10px; }
-    .language-flags.visible #flag-uk { top: 90px; left: -10px; }
-    .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
-    .container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      max-width: 1000px;
-      width: 100%;
-      padding: 20px;
-      margin: 70px auto 0 auto;
-      position: relative;
-      z-index: 1;
-    }
+      /* Reguli care poziționează fiecare steag individual */
+      .language-flags.visible #flag-it { top: 10px; left: 10px; }
+      .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+      .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+      .container {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          max-width: 1000px;
+          width: 100%;
+          padding: 20px;
+          margin: 70px auto 0 auto;
+          position: relative;
+          z-index: 1;
+      }
     .activities {
-      flex: 1;
-      margin-right: 30px;
-      font-size: 1.7em;
-      color: #555;
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      text-shadow: 2px 4px 12px #aaa;
+          flex: 1;
+          margin-right: 30px;
+          font-size: 1.7em;
+          color: #555;
+          line-height: 1.5;
+          font-family: Georgia, serif;
+          text-shadow: 2px 4px 12px #aaa;
     }
     .activities ul, .activities li {
-      list-style-type: none;
-      padding-left: 0;
-      margin: 0;
+          list-style-type: none;
+          padding-left: 0;
+          margin: 0;
     }
     .activities li {
-      text-indent: -1em;
-      padding-left: 1.5em;
-      margin-bottom: 10px;
-      position: relative;
-      font-family: Georgia, serif;
-      color: #555;
-      text-shadow: 2px 4px 12px #aaa;
-      font-size: 1em;
+          text-indent: -1em;
+          padding-left: 1.5em;
+          margin-bottom: 10px;
+          position: relative;
+          font-family: Georgia, serif;
+          color: #555;
+          text-shadow: 2px 4px 12px #aaa;
+          font-size: 1em;
     }
     .activities li::before {
-      content: '●';
-      color: #555;
-      font-size: 1.3em;
-      position: absolute;
-      left: 10px;
-      top: -5px;
-      text-shadow: 2px 4px 12px #aaa;
+          content: '●';
+          color: #555;
+          font-size: 1.3em;
+          position: absolute;
+          left: 10px;
+          top: -5px;
+          text-shadow: 2px 4px 12px #aaa;
     }
     .extra-indent {
-      padding-left: 40px;
-      font-size: 0.9em;
+          padding-left: 40px;
+          font-size: 0.9em;
     }
     .optional-block {
-      padding-left: 220px;
+          padding-left: 220px;
     }
     .optional-title {
-        margin-top: 30px;
-        padding-left: 30px;
-        position: relative;
-        font-weight: bold;
+          margin-top: 30px;
+          padding-left: 30px;
+          position: relative;
+          font-weight: bold;
     }
     .optional-title::before {
-        content: '●';
-        position: absolute;
-        left: -2px;
-        top: -2px;
-        color: #555;
-        font-size: 1.3em;
-        text-shadow: 2px 4px 12px #aaa;
+          content: '●';
+          position: absolute;
+          left: -2px;
+          top: -2px;
+          color: #555;
+          font-size: 1.3em;
+          text-shadow: 2px 4px 12px #aaa;
     }
     .image-container {
-      flex-shrink: 0;
-      align-self: flex-start;
-      margin-left: -40px;
+          flex-shrink: 0;
+          align-self: flex-start;
+          margin-left: -40px;
     }
     .image-container img {
-      width: 300px;
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 2px 2px 12px #bbb;
-      background: #fff;
-      transition: transform 0.4s ease;
+          width: 300px;
+          max-width: 100%;
+          border-radius: 10px;
+          box-shadow: 2px 2px 12px #bbb;
+          background: #fff;
+          transition: transform 0.4s ease;
     }
-    @media (min-width: 0px) and (max-width: 554px) {
+    @media screen and (max-width: 428px) {
       body {
-        padding-top: 40px;
-        min-width: unset;
+          padding-top: 40px;
+          min-width: unset;
       }
-  
+
       .navbar {
-        padding: 8px 70px 8px 8px; 
-        font-size: 1.1em; 
-        height: 40px !important;
+          padding: 8px 20px 8px 8px; 
+          font-size: 1em; 
+          height: 40px !important;
       }
-  
-    .menu {
-      gap: 2px; 
-      font-size: 1.1em !important;
-      padding-right: 20px;
+
+      .menu {
+          gap: 2px; 
+          font-size: 1.1em !important;
+          padding-right: 10px;
+      }
+
+      .menu a {
+          padding: 0 8px !important; 
+          font-size: 1.1em !important;
+      }
+
+      .globe-icon {
+          width: 40px; 
+          top: 3px;
+          right: 3px;
+      }
+
+      .container {
+          flex-direction: row; 
+          margin-top: 40px;
+          padding: 10px;
+          justify-content: center;
+      }
+
+      .activities {
+          margin-right: 10px;
+          font-size: 1.4em; 
+          width: 45%;
+          order: 1; 
+      }
+
+      .image-container {
+          margin-left: 10px;
+          margin-bottom: 20px;
+          width: 45%;
+          text-align: center;
+          order: 2; 
+      }
+
+      .image-container img {
+          width: 100% !important; 
+          max-width: 250px;
+          margin: 0 auto;
+      }
+
+      .activities li {
+          font-size: 1.1em !important;
+          line-height: 1.4em !important;
+          padding-left: 1.8em !important;
+          margin-bottom: 15px !important;
+      }
+
+      .activities li::before {
+          font-size: 1.4em !important;
+          left: 5px !important;
+          top: -3px !important;
+      }
+
+      .highlighted-activity {
+          font-size: 1.2em !important;
+          margin-left: 0 !important;
+          padding-left: 1.5em !important;
+          margin-top: 15px !important;
+          margin-bottom: 15px !important;
+      }
+
+      h1 {
+          font-size: 2.2em !important;
+          margin-top: 10px;
+          margin-bottom: 5px;
+          text-align: center;
+      }
+
+      h2 {
+          font-size: 1.4em !important;
+          margin-top: 0;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+
+      .sub-text {
+          display: none;
+      }
     }
-  
-    .menu a {
-      padding: 0 10px !important; 
-      font-size: 1.1em !important;
-    }
-    
-    .globe-icon {
-      width: 45px; 
-      top: 5px;
-      right: 5px;
-    }
-  
-    .container {
-      flex-direction: column; 
-      margin-top: 40px;
-      padding: 10px;
-    }
-    
-    .activities {
-      margin-right: 0;
-      font-size: 1.4em; 
-      width: 100%;
-      order: 2; 
-    }
-  
-    .image-container {
-      margin-left: 0;
-      margin-bottom: 20px;
-      width: 100%;
-      text-align: center;
-      order: 1; 
-    }
-    
-    .image-container img {
-      width: 90% !important; 
-      max-width: 300px;
-      margin: 0 auto;
-    }
-    
-    .activities li {
-      font-size: 1.1em !important;
-      line-height: 1.4em !important;
-      padding-left: 1.8em !important;
-      margin-bottom: 15px !important;
-    }
-  
-    .activities li::before {
-      font-size: 1.4em !important;
-      left: 5px !important;
-      top: -3px !important;
-    }
-    
-    .highlighted-activity {
-      font-size: 1.2em !important;
-      margin-left: 0 !important;
-      padding-left: 1.5em !important;
-      margin-top: 15px !important;
-      margin-bottom: 15px !important;
-    }
-  
-    .optional-block {
-      padding-left: 0;
-    }
-    
-    .optional-title {
-      padding-left: 1.5em;
-      margin-top: 25px;
-    }
-    
-    .extra-indent {
-      padding-left: 1.5em !important;
-    }
-  
-    h1 {
-      font-size: 2.2em !important;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      text-align: center;
-    }
-    
-    h2 {
-      font-size: 1.4em !important;
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    
-    .sub-text {
-      display: none;
-    }
-  }
- 
   </style>
 </head>
 <body>

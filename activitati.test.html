@@ -2,309 +2,437 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activități pentru Familie - Mobile Optimized</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activități</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      padding: 30px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-      padding: 20px;
-      background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-      border-radius: 12px;
-      color: white;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 400;
-      opacity: 0.9;
-    }
-
-    .content {
-      display: flex;
-      gap: 40px;
-      margin-top: 20px;
-    }
-
-    .activities {
-      flex: 1;
-      padding: 20px;
-      background: #f8f9fa;
-      border-radius: 12px;
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .activities ul {
-      list-style: none;
-      margin: 20px 0;
-    }
-
-    .activities li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 25px;
-      font-size: 1.3rem;
-      line-height: 1.5;
-      color: #2c3e50;
-      transition: all 0.3s ease;
-    }
-
-    .activities li:hover {
-      color: #4b6cb7;
-      transform: translateX(5px);
-    }
-
-    .activities li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #e74c3c;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    .highlighted-activity {
-      background: linear-gradient(to right, #4b6cb7, #3498db);
-      color: white;
-      padding: 15px 20px;
-      border-radius: 8px;
-      margin: 25px 0;
-      font-size: 1.4rem;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .extra-indent {
-      padding-left: 40px !important;
-    }
-
-    .extra-indent::before {
-      left: 10px !important;
-    }
-
-    .optional-block {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 2px dashed #3498db;
-    }
-
-    .optional-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #e74c3c;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .image-container {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      border: 5px solid white;
-    }
-
-    .image-placeholder {
-      width: 100%;
-      height: 400px;
-      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Mobile Optimization */
-    @media screen and (max-width: 768px) {
-      .content {
-        flex-direction: column;
-      }
-      
-      .image-container {
-        margin-top: 30px;
-      }
-    }
-
-    /* Critical mobile fixes (max-width: 428px) */
-    @media screen and (max-width: 428px) {
       body {
-        padding: 15px;
-        padding-top: 20px;
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, serif;
+          background: white;
+          padding-top: 50px;
+          min-width: 375px;
       }
-      
-      .container {
-        padding: 20px 15px;
-        border-radius: 10px;
+      h1, h2 {
+          text-align: center;
+          font-family: 'Lobster', cursive, Georgia, serif;
+          margin-top: 30px;
+          margin-bottom: 0;
+          z-index: 2;
+          position: relative;
       }
-      
-      header {
-        padding: 15px 10px;
-        border-radius: 8px;
-      }
-      
       h1 {
-        font-size: 1.8rem !important;
+          font-size: 2.5em;
+          margin-bottom: 10px;
+          text-align: center;
       }
-      
       h2 {
-        font-size: 1.2rem !important;
+          font-size: 1.5em;
+          margin-bottom: 30px;
+          margin-top: auto;
+          text-align: center;
       }
+    
+      .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: #f3f3f3;
+          padding: 12px 90px 12px 8px; /* Spațiu în dreapta pentru glob */
+          border-bottom-right-radius: 18px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+      }
+      .navbar::-webkit-scrollbar { display: none; }
       
-      .content {
-        flex-direction: column;
-        gap: 20px;
+      .menu {
+          display: flex;
+          gap: 4px;
+          font-size: 1em;
+          font-weight: bold;
+          align-items: flex-end;
+          white-space: nowrap;      
       }
-      
-      .activities {
-        width: 100%;
-        padding: 15px;
-        margin-right: 0;
-        order: 1;
+      .menu a {
+          text-decoration: none;
+          color: #555;
+          font-family: Georgia, serif;
+          padding: 0 8px;
       }
-      
-      .image-container {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 0;
-        order: 2;
+      .sub-text {
+          font-size: 0.7em;
+          font-weight: normal;
+          margin-left: 2px;
       }
-      
-      /* Fixed bullet spacing */
-      .activities li {
-        padding-left: 26px !important; /* Reduced from 30px */
-        font-size: 1.1rem !important;
-        margin-bottom: 20px !important;
+
+      .language-interface {
+          position: fixed;
+          top: 0; right: 0;
+          z-index: 2000;
       }
-      
-      .activities li::before {
-        left: 8px !important; /* Moved from left edge */
-        font-size: 1.5rem !important;
-        top: -2px;
+      .globe-icon-container {
+          position: fixed;
+          top: 10px; right: 10px;
+          z-index: 2100;
+          pointer-events: auto;
       }
-      
-      .extra-indent {
-        padding-left: 36px !important; /* Reduced from 40px */
+      .globe-icon {
+          width: 60px;
+          cursor: pointer;
       }
-      
-      .extra-indent::before {
-        left: 18px !important; /* Adjusted position */
+      .language-flags {
+          position: absolute;
+          top: 0; right: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease-in-out;
+          width: 160px; height: 160px;
       }
-      
-      .highlighted-activity {
-        font-size: 1.15rem !important;
-        padding: 12px 15px;
-        margin: 20px 0 !important;
+      .language-flags.visible { 
+          pointer-events: auto; 
       }
-      
-      .optional-title {
-        font-size: 1.25rem !important;
+      .language-flags img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(0,0,0,0.3);
+          cursor: pointer;
+          position: absolute;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+          opacity: 0; 
+          transform: scale(0.5); 
       }
-      
-      .optional-block {
-        margin-top: 30px;
+      .language-flags.visible img {
+          opacity: 1;
+          transform: scale(1);
       }
+
+      /* Reguli care poziționează fiecare steag individual */
+      .language-flags.visible #flag-it { top: 10px; left: 10px; }
+      .language-flags.visible #flag-uk { top: 90px; left: -10px; }
+      .language-flags.visible #flag-ro { bottom: -10px; right: 20px; }
+      .container {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          max-width: 1000px;
+          width: 100%;
+          padding: 20px;
+          margin: 70px auto 0 auto;
+          position: relative;
+          z-index: 1;
+      }
+    .activities {
+          flex: 1;
+          margin-right: 30px;
+          font-size: 1.7em;
+          color: #555;
+          line-height: 1.5;
+          font-family: Georgia, serif;
+          text-shadow: 2px 4px 12px #aaa;
     }
+    .activities ul, .activities li {
+          list-style-type: none;
+          padding-left: 0;
+          margin: 0;
+    }
+    .activities li {
+          text-indent: -1em;
+          padding-left: 1.5em;
+          margin-bottom: 10px;
+          position: relative;
+          font-family: Georgia, serif;
+          color: #555;
+          text-shadow: 2px 4px 12px #aaa;
+          font-size: 1em;
+    }
+    .activities li::before {
+          content: '●';
+          color: #555;
+          font-size: 1.3em;
+          position: absolute;
+          left: 10px;
+          top: -5px;
+          text-shadow: 2px 4px 12px #aaa;
+    }
+    .extra-indent {
+          padding-left: 40px;
+          font-size: 0.9em;
+    }
+    .optional-block {
+          padding-left: 220px;
+    }
+    .optional-title {
+          margin-top: 30px;
+          padding-left: 30px;
+          position: relative;
+          font-weight: bold;
+    }
+    .optional-title::before {
+          content: '●';
+          position: absolute;
+          left: -2px;
+          top: -2px;
+          color: #555;
+          font-size: 1.3em;
+          text-shadow: 2px 4px 12px #aaa;
+    }
+    .image-container {
+          flex-shrink: 0;
+          align-self: flex-start;
+          margin-left: -40px;
+    }
+    .image-container img {
+          width: 300px;
+          max-width: 100%;
+          border-radius: 10px;
+          box-shadow: 2px 2px 12px #bbb;
+          background: #fff;
+          transition: transform 0.4s ease;
+    }
+    
+    @media screen and (max-width: 428px) {
+  body {
+    padding-top: 40px;
+    min-width: unset;
+  }
+  
+  .navbar {
+    padding: 8px 20px 8px 8px;
+    font-size: 1em;
+    height: 40px !important;
+  }
+  
+  .menu {
+    gap: 2px;
+    font-size: 1.1em !important;
+    padding-right: 10px;
+  }
+  
+  .menu a {
+    padding: 0 8px !important;
+    font-size: 1.1em !important;
+  }
+  
+  .globe-icon {
+    width: 40px;
+    top: 3px;
+    right: 3px;
+  }
+  
+  .container {
+    flex-direction: row;
+    margin-top: 40px;
+    padding: 10px;
+    justify-content: center;
+  }
+  
+  .activities {
+    margin-right: 10px;
+    font-size: 1.4em;
+    width: 45%;
+    order: 1;
+  }
+  
+  .image-container {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 45%;
+    text-align: center;
+    order: 2;
+  }
+  
+  .image-container img {
+    width: 100% !important;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .activities li {
+    font-size: 1.1em !important;
+    line-height: 1.4em !important;
+    padding-left: 2em !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .activities li::before {
+    font-size: 1.4em !important;
+    left: 2px !important;
+    top: -3px !important;
+  }
+  
+  .optional-block {
+    order: 0 !important;
+  }
+  
+  .highlighted-activity {
+    font-size: 1.2em !important;
+    margin-left: 0 !important;
+    padding-left: 1.5em !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  h1 {
+    font-size: 2.2em !important;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.4em !important;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sub-text {
+    display: none;
+  }
+}
+
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Aventuri Indiene pentru Familie</h1>
-      <h2>O experiență memorabilă în inima naturii</h2>
-    </header>
-    
-    <div class="content">
-      <div class="activities">
-        <ul>
-          <li data-ro="Jocuri interactive" data-en="Interactive games" data-it="Giochi interattivi">Jocuri interactive</li>
-        </ul>
-        <div class="highlighted-activity" data-ro="Pictura pe față (Indian painting)" data-en="Face painting (Indian style)" data-it="Pittura sul viso (stile indiano)">Pictura pe față (Indian painting)</div>
-        <ul>
-          <li data-ro="Drumeții - pe urmele lui Miciu-Piciu" data-en="Hikes - following Miciu-Piciu" data-it="Escursioni - sulle orme di Miciu-Piciu">Drumeții - pe urmele lui Miciu-Piciu</li>
-        </ul>
-        <div class="highlighted-activity" data-ro="Acces gratuit la garderoba cu costume indiene pe tot parcursul șederii" data-en="Free access to Indian costumes during your stay" data-it="Accesso gratuito ai costumi indiani durante il soggiorno">Acces gratuit la garderoba cu costume indiene</div>
-        <ul>
-          <li class="extra-indent" data-ro="Indian food & băuturi magice" data-en="Indian food & magical drinks" data-it="Cibo indiano e bevande magiche">Indian food & băuturi magice</li>
-        </ul>
-        <div class="highlighted-activity" data-ro="Cântece în jurul focului" data-en="Songs around the fire" data-it="Canzoni attorno al fuoco">Cântece în jurul focului</div>
-        <ul>
-          <li class="extra-indent" data-ro="Acces gratuit la locul de joacă și la animăluțe" data-en="Free access to playground and animals" data-it="Accesso gratuito all'area giochi e agli animali">Acces gratuit la locul de joacă și animăluțe</li>
-        </ul>
-        <div class="highlighted-activity" data-ro="Vânătoare de insecte" data-en="Insect hunting" data-it="Caccia agli insetti">Vânătoare de insecte</div>
-
-        <div class="optional-block">
-          <div class="optional-title" data-ro="Activități opționale (extra cost):" data-en="Optional activities (extra cost):" data-it="Attività opzionali (costo extra):">Activități opționale (extra cost):</div>
-          <div class="highlighted-activity" data-ro="Plimbare cu bărcuța pe Lacul Învârtita" data-en="Boat ride on Lake Învârtita" data-it="Giro in barca sul Lago Învârtita">Plimbare cu bărcuța pe Lacul Învârtita</div>
-          <ul>
-            <li class="extra-indent" data-ro="Body painting cu henna" data-en="Henna body painting" data-it="Body painting con henné">Body painting cu henna</li>
-          </ul>
-          <div class="highlighted-activity" data-ro="Treasure Hunt prin pădure" data-en="Treasure Hunt through the forest" data-it="Caccia al tesoro nella foresta">Treasure Hunt prin pădure</div>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <div class="image-placeholder">
-          Imagine: Familie<br>în costume indiene<br>pe lac
-        </div>
+  <!-- Navbar fix stânga sus -->
+  <div class="navbar">
+    <div class="menu" style="list-style: none; padding-left: 0; margin: 0;">
+      
+      <li><b><a href="./index.html" rel="noopener noreferrer" id="menu-home">Home</a></b></li>
+      <li><b><a href="./curiozitati.html" rel="noopener noreferrer" id="menu-about">Curiozități despre Miciu-Piciu</a></b></li>
+      <li><b><a href="./galerie.html" rel="noopener noreferrer" id="menu-gallery">Galerie Foto</a></b></li>
+      <li><b><a href="./construieste.aminitiri.html" rel="noopener noreferrer" id="menu-memories">Construiește amintiri</a></b></li>
+      <li><b><a href="./contact.html" id="menu-contact" rel="noopener noreferrer">Ne găsești aici</a></b></li>
+      <li><a href="./mesaj sacru.html" rel="noopener noreferrer" id="main-message">Mesaj Sacru</a></li>
+    </div>
+  </div>
+  <!-- Limbă fix dreapta sus -->
+  <div class="language-interface">
+    <div class="globe-icon-container">
+      <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
+      <div id="language-flags" class="language-flags">
+        <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
+        <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
+        <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
       </div>
     </div>
   </div>
 
+  <h1 data-ro="Indian Camping Nucșoara" data-en="Indian Camping Nucșoara" data-it="Camping Indian Nucșoara">Indian Camping Nucșoara</h1>
+  <h2 data-ro="Pe urmele lui Miciu-Piciu" data-en="On the trail of Miciu-Piciu" data-it="Sulle tracce di Miciu-Piciu">Pe urmele lui Miciu-Piciu</h2>
+ 
+  <div class="container">
+    <div class="activities">
+      <ul>
+        <li data-ro="Jocuri interactive" data-en="Interactive games" data-it="Giochi interattivi">Jocuri interactive</li>
+      </ul>
+      <div class="highlighted-activity" data-ro="Pictura pe față (Indian painting)" data-en="Face painting (Indian style)" data-it="Pittura sul viso (stile indiano)">Pictura pe față (Indian painting)</div>
+      <ul>
+        <li data-ro="Drumeții - pe urmele lui Miciu-Piciu" data-en="Hikes - following Miciu-Piciu" data-it="Escursioni - sulle orme di Miciu-Piciu">Drumeții - pe urmele lui Miciu-Piciu</li>
+      </ul>
+      <div class="highlighted-activity" data-ro="Acces gratuit la garderoba cu costume indiene pe tot parcursul șederii" data-en="Free access to Indian costumes during your stay" data-it="Accesso gratuito ai costumi indiani durante il soggiorno">Acces gratuit la garderoba...</div>
+      <ul>
+        <li class="extra-indent" data-ro="Indian food & băuturi magice" data-en="Indian food & magical drinks" data-it="Cibo indiano e bevande magiche">Indian food & băuturi magice</li>
+      </ul>
+      <div class="highlighted-activity" data-ro="Cântece în jurul focului" data-en="Songs around the fire" data-it="Canzoni attorno al fuoco">Cântece în jurul focului</div>
+      <ul>
+        <li class="extra-indent" data-ro="Acces gratuit la locul de joacă și la animăluțe" data-en="Free access to playground and animals" data-it="Accesso gratuito all'area giochi e agli animali">Acces gratuit la locul de joacă...</li>
+      </ul>
+      <div class="highlighted-activity" data-ro="Vânătoare de insecte" data-en="Insect hunting" data-it="Caccia agli insetti">Vânătoare de insecte</div>
+
+      <div class="optional-block">
+        <div class="optional-title" data-ro="Activități opționale (extra cost):" data-en="Optional activities (extra cost):" data-it="Attività opzionali (costo extra):">Activități opționale (extra cost):</div>
+        <div class="highlighted-activity" data-ro="Plimbare cu bărcuța pe Lacul Învârtita" data-en="Boat ride on Lake Învârtita" data-it="Giro in barca sul Lago Învârtita">Plimbare cu bărcuța...</div>
+        <ul>
+          <li class="extra-indent" data-ro="Body painting cu henna" data-en="Henna body painting" data-it="Body painting con henné">Body painting cu henna</li>
+        </ul>
+        <div class="highlighted-activity" data-ro="Treasure Hunt prin pădure" data-en="Treasure Hunt through the forest" data-it="Caccia al tesoro nella foresta">Treasure Hunt prin pădure</div>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="./poza cu familia.png" alt="Familie" />
+    </div>
+  </div>
+
   <script>
-    // Simple script to demonstrate language switching
-    document.addEventListener('DOMContentLoaded', function() {
-      const languageButtons = document.querySelectorAll('[data-lang]');
-      
-      languageButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const lang = this.getAttribute('data-lang');
-          alert(`Limba schimbată în: ${lang.toUpperCase()}`);
+    // --- Funcția pentru a arăta/ascunde steagurile ---
+    function toggleLanguages() {
+        document.getElementById('language-flags').classList.toggle('visible');
+    }
+
+    // --- Funcția principală de traducere (O SINGURĂ DATĂ) ---
+    function setLanguage(lang) {
+        // Pas 1: Salvează limba aleasă, pentru a fi folosită pe alte pagini
+        localStorage.setItem('selectedLanguage', lang);
+
+        // Pas 2: Traduce meniul folosind obiectul menuMap
+        const menuMap = {
+            ro: {
+                'menu-home': 'Home',
+                'menu-about': 'Curiozități',
+                'menu-gallery': 'Galerie',
+                'menu-memories': 'Construiește amintiri',
+                'menu-contact': 'Ne găsești aici',
+                'main-message': 'Mesaj Sacru',
+                'sub-about': 'despre Miciu-Piciu',
+                'sub-gallery': 'Foto'
+            },
+            en: {
+                'menu-home': 'Home',
+                'menu-about': 'About',
+                'menu-gallery': 'Gallery',
+                'menu-memories': 'Build Memories',
+                'menu-contact': 'Contact us',
+                'main-message': 'Sacred Message',
+                'sub-about': 'about Miciu-Piciu',
+                'sub-gallery': 'Photo'
+            },
+            it: {
+                'menu-home': 'Home',
+                'menu-about': 'Curiosità',
+                'menu-gallery': 'Galleria',
+                'menu-memories': 'Crea ricordi',
+                'menu-contact': 'Contattaci',
+                'main-message': 'Messaggio Sacro',
+                'sub-about': 'su Miciu-Piciu',
+                'sub-gallery': 'Foto'
+            }
+        };
+
+        for (const id in menuMap[lang]) {
+            const el = document.getElementById(id);
+            if (el) { // Verificăm dacă elementul există pe pagină
+                el.textContent = menuMap[lang][id];
+            }
+        }
+        
+        // Pas 3 (Opțional): Traduce și alte elemente cu atribute data-ro, data-en etc.
+        const elements = document.querySelectorAll('[data-ro]'); // Presupunem că data-ro există mereu
+        elements.forEach(el => {
+            if (el.hasAttribute(`data-${lang}`)) {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            }
         });
-      });
+
+        // Pas 4: Ascunde steagurile după selecție
+        document.getElementById('language-flags').classList.remove('visible');
+    }
+
+    // --- La încărcarea paginii, citește limba salvată și aplic-o ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
+        setLanguage(savedLang);
     });
-  </script>
+</script>
 </body>
 </html>

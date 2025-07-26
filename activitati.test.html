@@ -162,6 +162,25 @@
           top: -5px;
           text-shadow: 2px 4px 12px #aaa;
     }
+    .highlighted-activity li {
+          text-indent: -1em;
+          padding-left: 1.5em;
+          margin-bottom: 10px;
+          position: relative;
+          font-family: Georgia, serif;
+          color: #555;
+          text-shadow: 2px 4px 12px #aaa;
+          font-size: 1em;
+    }
+    .highlighted-activity li::before {
+          content: '●';
+          color: #555;
+          font-size: 1.3em;
+          position: absolute;
+          left: 10px;
+          top: -5px;
+          text-shadow: 2px 4px 12px #aaa;
+    }
     .extra-indent {
           padding-left: 40px;
           font-size: 0.9em;
@@ -280,6 +299,7 @@
     margin-bottom: 15px !important;
   }
   .highlighted-activity li::before {
+    content: " • ";
     font-size: 1.3em !important;
     left: 10px !important;
     top: -3px !important;

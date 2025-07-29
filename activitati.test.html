@@ -292,15 +292,49 @@
     top: -3px !important;
     text-shadow: 4px 8px 24px #707070;
   }
-  
   .optional-block {
         margin: 0 auto;
         width: 100%;  
         padding: 10px;
         text-align: center;
-        justify-content: center;
-        align-items: center;
-  }
+    }
+    
+    .optional-title {
+        margin-top: 30px;
+        padding-left: 30px;
+        position: relative;
+        font-weight: bold;
+        text-align: center;  /* Add this */
+    }
+    
+    .optional-title::before {
+        content: '●';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -2px;
+        color: #555;
+        font-size: 1.3em;
+        text-shadow: 2px 4px 12px #aaa;
+    }
+    
+    .extra-indent {
+        padding-left: 40px;
+        font-size: 0.9em;
+        margin-bottom: 5px;
+        text-align: center;  
+    }
+    
+    .extra-indent::before {
+        content: '●';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0.2em;
+        color: #555;
+        font-size: 1.3em;
+        text-shadow: 4px 8px 24px #aaa;
+    }
   
   .highlighted-activity {
     font-size: 1em !important;

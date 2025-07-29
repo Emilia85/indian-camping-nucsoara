@@ -293,33 +293,47 @@
     text-shadow: 4px 8px 24px #707070;
   }
   .optional-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  padding: 10px;
-}
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+  }
 
-.extra-indent {
-  position: relative;
-  padding-left: 40px;
-  font-size: 0.9em;
-  margin-bottom: 5px;
-  display: inline-block;
-  text-align: center;
-}
+  .optional-title {
+    position: relative;
+    padding-left: 1.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block;
+  }
 
-.extra-indent::before {
-  content: '●';
-  position: absolute;
-  left: 0;
-  top: 0.2em;
-  color: #555;
-  font-size: 1.3em;
-  text-shadow: 4px 8px 24px #aaa;
-}
+  .optional-title::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    color: #555;
+    font-size: 1.2em;
+    text-shadow: 2px 4px 12px #aaa;
+  }
+  .extra-indent {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 5px;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .extra-indent::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    color: #555;
+    font-size: 1.2em;
+    text-shadow: 2px 4px 12px #aaa;
+  }
+
 
   .highlighted-activity {
     font-size: 1em !important;

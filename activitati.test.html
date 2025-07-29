@@ -293,33 +293,24 @@
     text-shadow: 4px 8px 24px #707070;
   }
   .optional-block {
-        margin: auto;
-        width: 60%;
-        padding: 10px;
-        text-align: center;
-    }
-    .optional-title {
-          margin-top: 30px;
-          padding-left: 30px;
-          position: relative;
-          font-weight: bold;
-    }
-    .optional-title::before {
-          content: '●';
-          position: absolute;
-          left: -2px;
-          top: -2px;
-          color: #555;
-          font-size: 1.3em;
-          text-shadow: 2px 4px 12px #aaa;
-    }
-  .extra-indent {
-         padding-left: 40px;
-          font-size: 0.9em;
-          margin-bottom: 5px;
-         text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centrează pe orizontală */
+    margin: 0 auto;
+    width: 100vw;          /* ocupă toată lățimea ecranului */
+    padding: 10px;
+    text-align: center;
   }
-
+  .optional-title,
+  .extra-indent {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0.5em; /* ajustează dacă vrei bulina mai aproape de text */
+  }
+  .optional-title::before {
+    left: 0; /* ajustează dacă vrei bulina chiar lângă text */
+  }
 
 
   .highlighted-activity {

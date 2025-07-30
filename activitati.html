@@ -136,7 +136,7 @@
           color: #555;
           line-height: 1.5;
           font-family: Georgia, serif;
-          text-shadow: 2px 4px 12px #aaa;
+          text-shadow: 2px 4px 12px #5e5b5b;
     }
     .activities ul, .activities li {
           list-style-type: none;
@@ -150,7 +150,7 @@
           position: relative;
           font-family: Georgia, serif;
           color: #555;
-          text-shadow: 2px 4px 12px #aaa;
+          text-shadow: 2px 4px 12px #5e5b5b;
           font-size: 1em;
     }
     .activities li::before {
@@ -160,29 +160,53 @@
           position: absolute;
           left: 10px;
           top: -5px;
-          text-shadow: 2px 4px 12px #aaa;
+          text-shadow: 2px 4px 12px #5e5b5b;
+    }
+    .highlighted-activity {
+        padding-left: 3em !important;
+        position: relative;
+        font-family: Georgia, serif;
+        color: #555;
+        text-shadow: 2px 4px 12px #5e5b5b;
+        font-size: 1em;
+        margin-bottom: 10px;
+        margin-left: 2px !important;
+    }
+    .highlighted-activity::before {
+          content: '●';
+          color: #555;
+          font-size: 1.3em;
+          position: absolute;
+          left: 50px !important;
+          top: 0.1em;
+          text-shadow: 2px 4px 12px #5e5b5b;
     }
     .extra-indent {
-          padding-left: 40px;
+          padding-left: 150px;
           font-size: 0.9em;
+          margin-bottom: 5px;
     }
     .optional-block {
-          padding-left: 220px;
+        margin: auto;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        text-shadow: 2px 4px 12px #5e5b5b;
     }
     .optional-title {
           margin-top: 30px;
-          padding-left: 30px;
+          padding-left: 170px;
           position: relative;
           font-weight: bold;
     }
     .optional-title::before {
           content: '●';
           position: absolute;
-          left: -2px;
-          top: -2px;
+          left: 185px;
+          top: -5px;
           color: #555;
           font-size: 1.3em;
-          text-shadow: 2px 4px 12px #aaa;
+          text-shadow: 2px 4px 12px #5e5b5b;
     }
     .image-container {
           flex-shrink: 0;
@@ -199,105 +223,128 @@
     }
     
     @media screen and (max-width: 428px) {
-          body {
-                padding: 10px;
-          }
-            
-          .container {
-                border-radius: 10px;
-          }
-            
-          header {
-                padding: 20px 10px;
-                border-radius: 0 0 20px 20px;
-          }
-            
-          h1 {
-              font-size: 2.2em !important;
-              margin-top: 10px;
-              margin-bottom: 5px;
-              text-align: center;
-          }
+  body {
+    padding-top: 40px;
+    min-width: unset;
+  }
+  
+  .navbar {
+    padding: 8px 20px 8px 8px;
+    font-size: 1em;
+    height: 40px !important;
+  }
+  
+  .menu {
+    gap: 2px;
+    font-size: 1em !important;
+    padding-right: 10px;
+  }
+  
+  .menu a {
+    padding: 0 8px !important;
+    font-size: 1em !important;
+  }
+  
+  .globe-icon {
+    width: 40px;
+    top: 3px;
+    right: 3px;
+  }
+  
+  .container {
+    flex-direction: row;
+    margin-top: 40px;
+    padding: 10px;
+    justify-content: center;
+  }
+  
+  .activities {
+    margin-right: 10px;
+    font-size: 1.4em;
+    width: 45%;
+    order: 1;
+  }
+  
+  .image-container {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 45%;
+    text-align: center;
+    order: 2;
+  }
+  
+  .image-container img {
+    width: 100% !important;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .activities li {
+    font-size: 1em !important;
+    line-height: 1.4em !important;
+    padding-left: 1.5em !important;
+    margin-bottom: 15px !important;
+    text-shadow: 2px 4px 12px #5e5b5b;
+  }
+  
+  .activities li::before {
+    font-size: 1.3em !important;
+    left: 10px !important;
+    top: -3px !important;
+    text-shadow: 2px 4px 12px #5e5b5b;
+  }
+  .optional-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    margin: 0 auto;
+    width: 100vw;          
+    padding: 10px;
+    text-align: center;
+  }
+  .optional-title,
+  .extra-indent {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0.5em; /* ajustează dacă vrei bulina mai aproape de text */
+  }
+  .optional-title::before {
+    left: 0; /* ajustează dacă vrei bulina chiar lângă text */
+  }
 
-          h2 {
-              font-size: 1.4em !important;
-              margin-top: 0;
-              margin-bottom: 20px;
-              text-align: center;
-          }
-            
-            .content {
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px 15px;
-            }
-            
-            .activities {
-                width: 100%;
-                padding: 15px;
-                margin-right: 0;
-                order: 1;
-            }
-            
-            .image-container {
-                width: 100%;
-                margin-left: 0;
-                margin-bottom: 0;
-                order: 2;
-            }
-            
-            /* Fixed bullet spacing */
-            .activities li {
-                padding-left: 24px !important;
-                font-size: 1.1rem !important;
-                margin-bottom: 20px !important;
-            }
-            
-            .activities li::before {
-                left: 8px !important;
-                font-size: 1.5rem !important;
-                top: -2px;
-            }
-            
-            .extra-indent {
-                padding-left: 32px !important;
-            }
-            
-            .extra-indent::before {
-                left: 16px !important;
-            }
-            
-            .highlighted-activity {
-                font-size: 1.15rem !important;
-                padding: 12px 15px;
-                margin: 20px 0 !important;
-            }
-            
-            .optional-title {
-                font-size: 1.25rem !important;
-            }
-            
-            .optional-block {
-                margin-top: 30px;
-            }
-            
-            .image-placeholder h3 {
-                font-size: 1.5rem;
-            }
-            
-            .image-placeholder p {
-                font-size: 1rem;
-            }
-            
-            footer {
-                padding: 15px;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
+
+  .highlighted-activity {
+    font-size: 1em !important;
+    margin-left: 45px !important;
+    padding-left: 20px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  .highlighted-activity::before {
+    content: " • ";
+    font-size: 1.3em !important;
+    left: 20px !important;
+    top: 0.1em !important;
+  }
+  h1 {
+    font-size: 1.7em !important;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1em !important;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .sub-text {
+    display: none;
+  }
+}
+
 
   </style>
 </head>
@@ -333,38 +380,28 @@
     <div class="activities">
       <ul>
         <li data-ro="Jocuri interactive" data-en="Interactive games" data-it="Giochi interattivi">Jocuri interactive</li>
-      </ul>
-      <div class="highlighted-activity" data-ro="Pictura pe față (Indian painting)" data-en="Face painting (Indian style)" data-it="Pittura sul viso (stile indiano)">Pictura pe față (Indian painting)</div>
-      <ul>
+        <li class="highlighted-activity" data-ro="Pictura pe față (Indian painting)" data-en="Face painting (Indian style)" data-it="Pittura sul viso (stile indiano)">Pictura pe față (Indian painting)</li>
         <li data-ro="Drumeții - pe urmele lui Miciu-Piciu" data-en="Hikes - following Miciu-Piciu" data-it="Escursioni - sulle orme di Miciu-Piciu">Drumeții - pe urmele lui Miciu-Piciu</li>
-      </ul>
-      <div class="highlighted-activity" data-ro="Acces gratuit la garderoba cu costume indiene pe tot parcursul șederii" data-en="Free access to Indian costumes during your stay" data-it="Accesso gratuito ai costumi indiani durante il soggiorno">Acces gratuit la garderoba...</div>
-      <ul>
+        <li class="highlighted-activity" data-ro="Acces gratuit la garderoba cu costume indiene pe tot parcursul șederii" data-en="Free access to Indian costumes during your stay" data-it="Accesso gratuito ai costumi indiani durante il soggiorno">Acces gratuit la garderoba...</li>
         <li class="extra-indent" data-ro="Indian food & băuturi magice" data-en="Indian food & magical drinks" data-it="Cibo indiano e bevande magiche">Indian food & băuturi magice</li>
-      </ul>
-      <div class="highlighted-activity" data-ro="Cântece în jurul focului" data-en="Songs around the fire" data-it="Canzoni attorno al fuoco">Cântece în jurul focului</div>
-      <ul>
+        <li class="highlighted-activity" data-ro="Cântece în jurul focului" data-en="Songs around the fire" data-it="Canzoni attorno al fuoco">Cântece în jurul focului</li>
         <li class="extra-indent" data-ro="Acces gratuit la locul de joacă și la animăluțe" data-en="Free access to playground and animals" data-it="Accesso gratuito all'area giochi e agli animali">Acces gratuit la locul de joacă...</li>
+        <li class="highlighted-activity" data-ro="Vânătoare de insecte" data-en="Insect hunting" data-it="Caccia agli insetti">Vânătoare de insecte</li>
       </ul>
-      <div class="highlighted-activity" data-ro="Vânătoare de insecte" data-en="Insect hunting" data-it="Caccia agli insetti">Vânătoare de insecte</div>
-
+      
+      
       <div class="optional-block">
         <div class="optional-title" data-ro="Activități opționale (extra cost):" data-en="Optional activities (extra cost):" data-it="Attività opzionali (costo extra):">Activități opționale (extra cost):</div>
-        <div class="highlighted-activity" data-ro="Plimbare cu bărcuța pe Lacul Învârtita" data-en="Boat ride on Lake Învârtita" data-it="Giro in barca sul Lago Învârtita">Plimbare cu bărcuța...</div>
-        <ul>
-          <li class="extra-indent" data-ro="Body painting cu henna" data-en="Henna body painting" data-it="Body painting con henné">Body painting cu henna</li>
-        </ul>
-        <div class="highlighted-activity" data-ro="Treasure Hunt prin pădure" data-en="Treasure Hunt through the forest" data-it="Caccia al tesoro nella foresta">Treasure Hunt prin pădure</div>
+        <div class="extra-indent" data-ro="Plimbare cu bărcuța pe Lacul Învârtita" data-en="Boat ride on Lake Învârtita" data-it="Giro in barca sul Lago Învârtita">Plimbare cu bărcuța...</div>
+        <div class="extra-indent" data-ro="Body painting cu henna" data-en="Henna body painting" data-it="Body painting con henné">Body painting cu henna</div>
+        <div class="extra-indent" data-ro="Treasure Hunt prin pădure" data-en="Treasure Hunt through the forest" data-it="Caccia al tesoro nella foresta">Treasure Hunt prin pădure</div>
       </div>
     </div>
-
     <div class="image-container">
-      <img src="./poza cu familia.png" alt="Familie" />
-    </div>
+        <img src="./poza cu familia.png" alt="Familie" />
+      </div>
   </div>
-<footer>
-  <a href="./activitati.test.html" target="_blank">Test</a>
-</footer>
+   
   <script>
     // --- Funcția pentru a arăta/ascunde steagurile ---
     function toggleLanguages() {

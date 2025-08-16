@@ -290,106 +290,194 @@
             }
         }
         @media (max-width: 700px) and (min-width: 551px) {
-            .header-container {
-                margin-top: 80px; /* Tranziție lină pentru spațiu */
-            }
-            .logo-image {
-                width: 55px;  
-            }
-            
-            .globe-icon {
-                width: 80px; /* Dimensiune ajustată, egală cu pandativul */
-            }
-            h1 {
-                font-size: 40px; /* Titlu vizibil la 574px */
-            }
-            #subtitle {
-                font-size: 25px; /* Subtitlu vizibil la 574px */
-            }
-            .section1 {
-                display: flex;
-                flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
-                flex-wrap: nowrap; /* Previne wrap-ul pentru a menține layout-ul pe un singur rând */
-                gap: 10px; /* Ajustează spațierea între text și poză */
-            }
-            .section1 .left, .section1 .right {
-                flex: 1 1 45%; /* Asigură un raport aproape egal, dar permite ajustarea */
-                min-width: 0; /* Permite reducerea dimensiunii minime pentru a se potrivi pe ecran */
-            }
-            .section1 .right img {
-                width: 100%; /* Imaginea ocupă tot spațiul disponibil în container */
-                max-width: 100%; /* Nu depășește containerul */
-                height: auto;
-            }
-            .section2 .right {
-                padding-left: 30px; /* Adaugă spațiu pentru a preveni suprapunerea bulinei cu textul */
-            }
-            .section2 .right li {
-                padding-left: 25px; /* Adaugă spațiu în stânga textului pentru a preveni suprapunerea cu bulina */
-            }
-            .section2 .right li::before {
-                left: -25px; /* Ajustează poziția bulinei pentru a nu se suprapune cu textul */
-                top: 50%; /* Centrează vertical mai bine */
-                transform: translateY(-50%);
-            }
-        }
-        @media (max-width: 550px) and (min-width: 401px) {
-            .header-container {
-                margin-top: 75px; /* Tranziție lină pentru spațiu */
-            }
-            .logo-image {
-                width: 70px; /* Dimensiune redusă, egală cu globul */
-            }
-            
-            .globe-icon {
-                width: 70px; /* Dimensiune redusă, egală cu pandativul */
-            }
-            h1 {
-                font-size: 45px; /* Titlu mai mic, dar vizibil */
-            }
-            #subtitle {
-                font-size: 32px; /* Subtitlu mai mic, dar vizibil */
-            }
-        }
-        @media (max-width: 400px) {
-            .header-container {
-                margin-top: 70px; /* Spațiu ajustat pentru ecrane foarte mici */
-            }
-            .logo-image {
-                width: 60px; /* Dimensiune mică, egală cu globul */
-            }
-            
-            .globe-icon {
-                width: 60px; /* Dimensiune mică, egală cu pandativul */
-            }
-            h1 {
-                font-size: 40px; /* Titlu mai mic pe mobile foarte mici */
-            }
-            #subtitle {
-                font-size: 28px; /* Subtitlu mai mic pe mobile foarte mici */
-            }
-        }
-        @media (max-width: 662px) {
-            .section1 {
-                display: flex;
-                flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
-                flex-wrap: nowrap; /* Previne wrap-ul pentru a menține layout-ul pe un singur rând */
-                gap: 10px; /* Ajustează spațierea între text și poză */
-            }
-            .section1 .left, .section1 .right {
-                flex: 1;
-                min-width: 0; /* Permite reducerea dimensiunii minime pentru a se potrivi pe ecran */
-            }
-            .section1 .right img {
-                width: 100%; /* Imaginea ocupă tot spațiul disponibil în container */
-                max-width: 100%; /* Nu depășește containerul */
-                height: auto;
-            }
-            .section2 .right li::before {
-                left: -10px !important;
-                top: 35%;
-            }
-        }
+    .header-container {
+        margin-top: 80px; /* Tranziție lină pentru spațiu */
+    }
+    .logo-image {
+        width: 55px;  
+    }
+    .globe-icon {
+        width: 80px; /* Dimensiune ajustată, egală cu pandativul */
+    }
+    h1 {
+        font-size: 40px; /* Titlu vizibil la 574px */
+    }
+    #subtitle {
+        font-size: 25px; /* Subtitlu vizibil la 574px */
+    }
+    .section1 {
+        display: flex;
+        flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
+        flex-wrap: nowrap; /* Previne wrap-ul pentru a menține layout-ul pe un singur rând */
+        gap: 10px; /* Ajustează spațierea între text și poză */
+    }
+    .section1 .left, .section1 .right {
+        flex: 1 1 45%; /* Asigură un raport aproape egal, dar permite ajustarea */
+        min-width: 0; /* Permite reducerea dimensiunii minime pentru a se potrivi pe ecran */
+    }
+    .section1 .right img {
+        width: 100%; /* Imaginea ocupă tot spațiul disponibil în container */
+        max-width: 100%; /* Nu depășește containerul */
+        height: auto;
+    }
+    .section2 .right {
+        padding-left: 30px; /* Adaugă spațiu pentru a preveni suprapunerea bulinei cu textul */
+    }
+    .section2 .right li {
+        padding-left: 25px; /* Adaugă spațiu în stânga textului pentru a preveni suprapunerea cu bulina */
+    }
+    .section2 .right li::before {
+        left: -20px; /* Ajustează poziția bulinei mai în stânga, dar nu foarte aproape de poză */
+        top: 50%; /* Centrează vertical mai bine */
+        transform: translateY(-50%);
+    }
+    /* Modificări pentru .section1 .left */
+    .section1 .left li {
+        margin-bottom: 8px; /* Reduce spațiul vertical dintre elementele <li> */
+        padding-left: 20px; /* Apropie textul de bulină */
+    }
+    .section1 .left li::before {
+        left: -5px; /* Mută bulina un pic mai în stânga */
+        top: 50%;
+        transform: translateY(-50%); /* Ajustare verticală */
+    }
+    .section1 .left {
+        margin-left: 2%; /* Reduce margin-ul din stânga pentru a face loc pozei */
+    }
+    .section1 .right {
+        flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
+    }
+}
+
+@media (max-width: 550px) and (min-width: 401px) {
+    .header-container {
+        margin-top: 75px; /* Tranziție lină pentru spațiu */
+    }
+    .logo-image {
+        width: 70px; /* Dimensiune redusă, egală cu globul */
+    }
+    .globe-icon {
+        width: 70px; /* Dimensiune redusă, egală cu pandativul */
+    }
+    h1 {
+        font-size: 45px; /* Titlu mai mic, dar vizibil */
+    }
+    #subtitle {
+        font-size: 32px; /* Subtitlu mai mic, dar vizibil */
+    }
+    /* Modificări pentru .section1 .left */
+    .section1 .left li {
+        margin-bottom: 8px; /* Reduce spațiul vertical dintre elementele <li> */
+        padding-left: 20px; /* Apropie textul de bulină */
+    }
+    .section1 .left li::before {
+        left: -5px; /* Mută bulina un pic mai în stânga */
+        top: 50%;
+        transform: translateY(-50%); /* Ajustare verticală */
+    }
+    .section1 .left {
+        margin-left: 2%; /* Reduce margin-ul din stânga pentru a face loc pozei */
+    }
+    .section1 .right {
+        flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
+    }
+    /* Modificări pentru .section2 .right */
+    .section2 .right li::before {
+        left: -20px !important; /* Mută bulina mai în stânga, dar nu foarte aproape de poză */
+        top: 50%; /* Centrează vertical */
+        transform: translateY(-50%);
+    }
+    .section2 .right li {
+        padding-left: 25px; /* Păstrează o mică distanță între bulină și text */
+    }
+}
+
+@media (max-width: 400px) {
+    .header-container {
+        margin-top: 70px; /* Spațiu ajustat pentru ecrane foarte mici */
+    }
+    .logo-image {
+        width: 60px; /* Dimensiune mică, egală cu globul */
+    }
+    .globe-icon {
+        width: 60px; /* Dimensiune mică, egală cu pandativul */
+    }
+    h1 {
+        font-size: 40px; /* Titlu mai mic pe mobile foarte mici */
+    }
+    #subtitle {
+        font-size: 28px; /* Subtitlu mai mic pe mobile foarte mici */
+    }
+    /* Modificări pentru .section1 .left */
+    .section1 .left li {
+        margin-bottom: 8px; /* Reduce spațiul vertical dintre elementele <li> */
+        padding-left: 20px; /* Apropie textul de bulină */
+    }
+    .section1 .left li::before {
+        left: -5px; /* Mută bulina un pic mai în stânga */
+        top: 50%;
+        transform: translateY(-50%); /* Ajustare verticală */
+    }
+    .section1 .left {
+        margin-left: 2%; /* Reduce margin-ul din stânga pentru a face loc pozei */
+    }
+    .section1 .right {
+        flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
+    }
+    /* Modificări pentru .section2 .right */
+    .section2 .right li::before {
+        left: -20px !important; /* Mută bulina mai în stânga, dar nu foarte aproape de poză */
+        top: 50%; /* Centrează vertical */
+        transform: translateY(-50%);
+    }
+    .section2 .right li {
+        padding-left: 25px; /* Păstrează o mică distanță între bulină și text */
+    }
+}
+
+@media (max-width: 662px) {
+    .section1 {
+        display: flex;
+        flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
+        flex-wrap: nowrap; /* Previne wrap-ul pentru a menține layout-ul pe un singur rând */
+        gap: 10px; /* Ajustează spațierea între text și poză */
+    }
+    .section1 .left, .section1 .right {
+        flex: 1;
+        min-width: 0; /* Permite reducerea dimensiunii minime pentru a se potrivi pe ecran */
+    }
+    .section1 .right img {
+        width: 100%; /* Imaginea ocupă tot spațiul disponibil în container */
+        max-width: 100%; /* Nu depășește containerul */
+        height: auto;
+    }
+    /* Modificări pentru .section1 .left */
+    .section1 .left li {
+        margin-bottom: 8px; /* Reduce spațiul vertical dintre elementele <li> */
+        padding-left: 20px; /* Apropie textul de bulină */
+    }
+    .section1 .left li::before {
+        left: -5px; /* Mută bulina un pic mai în stânga */
+        top: 50%;
+        transform: translateY(-50%); /* Ajustare verticală */
+    }
+    .section1 .left {
+        margin-left: 2%; /* Reduce margin-ul din stânga pentru a face loc pozei */
+    }
+    .section1 .right {
+        flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
+    }
+    /* Modificări pentru .section2 .right */
+    .section2 .right li::before {
+        left: -20px !important; /* Mută bulina mai în stânga, dar nu foarte aproape de poză */
+        top: 50%; /* Centrează vertical */
+        transform: translateY(-50%);
+    }
+    .section2 .right li {
+        padding-left: 25px; /* Păstrează o mică distanță între bulină și text */
+    }
+}
+        
         @media (min-width: 900px) {
             .section2 .right {
                 white-space: nowrap; /* Forțează textul să rămână pe un singur rând */

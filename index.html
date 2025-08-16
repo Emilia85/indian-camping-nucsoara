@@ -13,26 +13,47 @@
           background: white;
           margin: 0;
           padding: 0;
+          padding-top: env(safe-area-inset-top);
+          padding-right: env(safe-area-inset-right);
+          padding-bottom: env(safe-area-inset-bottom);
+          padding-left: env(safe-area-inset-left);
           font-family: 'Lobster', cursive;
           min-width: 450px;
         }
-        h1{
+        h1 {
             text-align: center;
+            font-size: 60px;
+            margin: 0;
         }
-        #subtitle{
+        #subtitle {
             text-align: center;
+            font-size: 40px;
+            margin: 0;
+        }
+        /* Container pentru header, doar pentru titluri */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: 80px auto 0; /* Spațiu pentru logo și glob */
+            padding: 20px;
+            background: white;
+            position: relative;
+            z-index: 1;
         }
         .logo-image {
-            position: relative;
-            top: -110px;
-            left: 5px;
-            z-index: 1; 
-            width: 30px; 
+            position: fixed;
+            top: 10px;
+            left: 7px;
+            z-index: 100;
+            width: 75px; /* Dimensiune egală cu globul pe desktop */
             height: auto;
             padding: 0;
             margin: 0;
         }
-
         .logo-image img {
             width: 100%;
             height: auto;
@@ -40,6 +61,65 @@
             padding: 0;
             margin: 0;
             position: relative;
+        }
+        .globe-icon-container {
+            position: fixed;
+            top: 7px;
+            right: 7px;
+            z-index: 1000;
+            pointer-events: auto;
+            padding-bottom: 10px;
+        }
+        .globe-icon {
+            width: 120px; /* Dimensiune egală cu pandativul pe desktop */
+            cursor: pointer;
+            filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+        }
+        .language-flags {
+            position: absolute;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+            width: 160px;
+            height: 160px;
+            transform: translate(0%, 0%);
+        }
+        .language-flags.visible {
+            pointer-events: auto;
+        }
+        .language-flags img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+        .language-flags.visible #flag-it {
+            top: 10px;
+            left: 10px;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .language-flags.visible #flag-uk {
+            top: 90px;
+            left: -10px;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .language-flags.visible #flag-ro {
+            bottom: -10px;
+            right: 20px;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .language-flags #flag-it,
+        .language-flags #flag-uk,
+        .language-flags #flag-ro {
+            opacity: 0;
+            transform: scale(0.5);
         }
         .container {
             display: flex;
@@ -104,7 +184,7 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            gap: 5px; 
+            gap: 5px;
         }
         .section2 .left {
             margin-right: 5px;
@@ -135,10 +215,10 @@
             font-size: 1.2em;
             position: absolute;
             left: -30px;
-            top: 30%;
+            top: 30px;
             transform: translateY(-50%);
         }
-        a{
+        a {
             display: inline-block;
             padding: 10px;
             text-decoration: none;
@@ -153,66 +233,10 @@
             pointer-events: none;
             z-index: 999;
         }
-        .globe-icon-container {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-            pointer-events: auto;
-            padding-bottom: 10px;
-        }
-        .globe-icon {
-            width: 80px;
-            cursor: pointer;
-            filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
-        }
-        .language-flags {
-            position: absolute;
-            top: 0;
-            right: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
-            width: 160px;
-            height: 160px;
-            transform: translate(0%, 0%);
-        }
-        .language-flags.visible {
-            pointer-events: auto;
-        }
-        .language-flags img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0,0,0,0.3);
-            cursor: pointer;
-            position: absolute;
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-        }
-        .language-flags.visible #flag-it {
-            top: 10px;
-            left: 10px;
-            opacity: 1;
-            transform: scale(1);
-        }
-        .language-flags.visible #flag-uk {
-            top: 90px;
-            left: -10px;
-            opacity: 1;
-            transform: scale(1);
-        }
-        .language-flags.visible #flag-ro {
-            bottom: -10px;
-            right: 20px;
-            opacity: 1;
-            transform: scale(1);
-        }
-        .language-flags #flag-it,
-        .language-flags #flag-uk,
-        .language-flags #flag-ro {
-            opacity: 0;
-            transform: scale(0.5);
-        }
-        @media (min-width: 900px) {
+        @media (min-width: 972px) {
+            .header-container {
+                margin-top: 80px; /* Mai mult spațiu pentru logo și glob mai mari */
+            }
             .row {
                 display: flex;
                 align-items: center;
@@ -220,7 +244,6 @@
                 max-width: 100%;
                 flex-wrap: nowrap;
             }
-
             .welcome-text {
                 display: inline-block;
                 white-space: nowrap;
@@ -230,168 +253,177 @@
                 flex: 1;
                 min-width: 0;
             }
-
             .section2 .right {
-                flex-grow: 1;       
-                max-width: none;    
-                margin-top: 0;      
+                flex-grow: 1;
+                max-width: none;
+                margin-top: 0;
                 align-items: center;
                 justify-content: center;
+                white-space: nowrap; /* Forțează textul să rămână pe un singur rând */
             }
-
+            .section2 .right li {
+                white-space: nowrap; /* Asigură că textul din listă rămâne pe un singur rând */
+            }
+            .section2 .right li a {
+                white-space: nowrap; /* Asigură că link-ul din listă nu se rupe pe mai multe rânduri */
+            }
             #main-message b {
-                white-space: nowrap; 
+                white-space: nowrap;
             }
         }
-      
-        @media (max-width: 554px) {
-    
-            .section2 .left img {
-                /* PĂSTRĂM setările existente care funcționează bine */
-                width: 250px !important;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                object-fit: cover;
+        @media (max-width: 850px) and (min-width: 701px) {
+            .header-container {
+                margin-top: 85px; /* Tranziție lină pentru spațiu */
+            }
+            .logo-image {
+                width: 60px; /* Dimensiune ușor redusă, egală cu globul */
             }
             
-            .section1 .right img {
-                /* Aplicăm ACELEAȘI setări ca pentru section2 */
-                width: 250px !important;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                object-fit: cover;
+            .globe-icon {
+                width: 100px; /* Dimensiune ușor redusă, egală cu pandativul */
             }
-
-            /* UNIFORMIZARE LISTE ȘI TEXT */
-            .section1 .left ul,
-            .section2 .right ul {
-                font-family: 'Lobster', cursive;
-                font-size: 1.1em !important; /* Dimensiune identică */
-                font-weight: normal;
-                list-style-position: inside;
-                margin: 0 !important;
-                padding: 0 !important;
-                padding-left: 1.5rem !important;
-                margin-left: 0.5rem  !important;
+            h1 {
+                font-size: 55px; /* Titlu ușor redus */
             }
-
-            .section1 .left ul li,
-            .section2 .right ul li {
-                display: list-item;
-                margin: 0.5rem 0 !important;
-                padding: 0.25rem 0 !important;
-                line-height: 1.4;
-                /* Distanță identică buline-text */
-                padding-left: 0.8rem !important;
-                text-indent: -0.8rem;
+            #subtitle {
+                font-size: 38px; /* Subtitlu ușor redus */
             }
-
-            .section1 .left ul li::marker,
-            .section2 .right ul li::marker {
-                font-size: 1.3em;
-                color: #333;
-                margin-right: 0.5rem;
+        }
+        @media (max-width: 700px) and (min-width: 551px) {
+            .header-container {
+                margin-top: 80px; /* Tranziție lină pentru spațiu */
             }
-
-            .section1 .left ul li a,
-            .section1 .left ul li b,
-            .section2 .right ul li a,
-            .section2 .right ul li b {
-                font-size: 1em !important;
-                line-height: 1.4em !important;
-                display: inline !important;
-                padding-left: 0.25rem !important;
-                font-weight: normal;
+            .logo-image {
+                width: 55px;  
             }
-
-            /* BONUS: Corecție pentru textul mic (sub-text) */
-            .section1 .left ul li .sub-text {
-                font-size: 0.75em !important; /* Mărit față de 0.65em */
-                padding-left: 1rem !important; /* Aliniere îmbunătățită */
-                display: block; /* Trece pe linie nouă */
-                text-indent: 0; /* Resetează indentarea */
-                margin-top: 0.2rem; /* Spațiu mic de separare */
+            
+            .globe-icon {
+                width: 80px; /* Dimensiune ajustată, egală cu pandativul */
             }
-
-            .section1 .right,
-            .section2 .right {
+            h1 {
+                font-size: 40px; /* Titlu vizibil la 574px */
+            }
+            #subtitle {
+                font-size: 25px; /* Subtitlu vizibil la 574px */
+            }
+            .section1 {
                 display: flex;
-                justify-content: center;
-                flex-direction: column;
+                flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
+                flex-wrap: nowrap; /* Previne wrap-ul pentru a menține layout-ul pe un singur rând */
+                gap: 10px; /* Ajustează spațierea între text și poză */
             }
-            /* 1. MĂRIRE POZĂ SECTION1 */
+            .section1 .left, .section1 .right {
+                flex: 1 1 45%; /* Asigură un raport aproape egal, dar permite ajustarea */
+                min-width: 0; /* Permite reducerea dimensiunii minime pentru a se potrivi pe ecran */
+            }
             .section1 .right img {
-                width: 280px !important; /* Crește dimensiunea cu 30px */
-                max-width: 100%; /* Asigură că nu depășește containerul */
-            }
-            
-            /* 2. DEPĂRTARE BULINĂ SECTION2 */
-            .section2 .right ul {
-                padding-left: 1.8rem !important; /* Spațiu mai mare la stânga */
-                margin-left: 0.7rem !important;   /* Offset suplimentar */
-            }
-            
-            /* 3. UNIFORMIZARE SPAȚIERE TEXT-BULINĂ */
-            .section1 .left ul li,
-            .section2 .right ul li {
-                padding-left: 1.3rem !important;  /* Crește spațiul pentru buline */
-                text-indent: -1.3rem;             /* Compensare pentru aliniere */
-            }
-            
-            /* 4. AJUSTARE TEXT MIC (OPȚIONAL) */
-            .section1 .left ul li .sub-text {
-                padding-left: 1.5rem !important; /* Aliniere îmbunătățită */
-                margin-top: 0.4rem;              /* Spațiu mai mare deasupra */
-            }
-            .section2 p {
-                padding-left: 8px;
-            }
-
-            .section1 .right img {
-                width: 450px;
-                max-width: 100%;
+                width: 100%; /* Imaginea ocupă tot spațiul disponibil în container */
+                max-width: 100%; /* Nu depășește containerul */
                 height: auto;
-                display: block;
             }
-            .right li::before {
-                content: '●';
-                color: black;
-                font-size: 1.2em;
-                position: absolute;
-                left: -15px;
-                top: 30%;
+            .section2 .right {
+                padding-left: 30px; /* Adaugă spațiu pentru a preveni suprapunerea bulinei cu textul */
+            }
+            .section2 .right li {
+                padding-left: 25px; /* Adaugă spațiu în stânga textului pentru a preveni suprapunerea cu bulina */
+            }
+            .section2 .right li::before {
+                left: -25px; /* Ajustează poziția bulinei pentru a nu se suprapune cu textul */
+                top: 50%; /* Centrează vertical mai bine */
                 transform: translateY(-50%);
             }
         }
-        @media  (max-width: 554px) {
+        @media (max-width: 550px) and (min-width: 401px) {
+            .header-container {
+                margin-top: 75px; /* Tranziție lină pentru spațiu */
+            }
+            .logo-image {
+                width: 70px; /* Dimensiune redusă, egală cu globul */
+            }
+            
+            .globe-icon {
+                width: 70px; /* Dimensiune redusă, egală cu pandativul */
+            }
+            h1 {
+                font-size: 45px; /* Titlu mai mic, dar vizibil */
+            }
+            #subtitle {
+                font-size: 32px; /* Subtitlu mai mic, dar vizibil */
+            }
+        }
+        @media (max-width: 400px) {
+            .header-container {
+                margin-top: 70px; /* Spațiu ajustat pentru ecrane foarte mici */
+            }
+            .logo-image {
+                width: 60px; /* Dimensiune mică, egală cu globul */
+            }
+            
+            .globe-icon {
+                width: 60px; /* Dimensiune mică, egală cu pandativul */
+            }
+            h1 {
+                font-size: 40px; /* Titlu mai mic pe mobile foarte mici */
+            }
+            #subtitle {
+                font-size: 28px; /* Subtitlu mai mic pe mobile foarte mici */
+            }
+        }
+        @media (max-width: 662px) {
+            .section1 {
+                display: flex;
+                flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
+                flex-wrap: nowrap; /* Previne wrap-ul pentru a menține layout-ul pe un singur rând */
+                gap: 10px; /* Ajustează spațierea între text și poză */
+            }
+            .section1 .left, .section1 .right {
+                flex: 1;
+                min-width: 0; /* Permite reducerea dimensiunii minime pentru a se potrivi pe ecran */
+            }
             .section1 .right img {
-                width: 320px !important;
+                width: 100%; /* Imaginea ocupă tot spațiul disponibil în container */
+                max-width: 100%; /* Nu depășește containerul */
+                height: auto;
             }
             .section2 .right li::before {
-                left: -10px !important; 
+                left: -10px !important;
                 top: 35%;
             }
-        } 
+        }
+        @media (min-width: 900px) {
+            .section2 .right {
+                white-space: nowrap; /* Forțează textul să rămână pe un singur rând */
+                max-width: none; /* Elimină restricția de lățime pentru a permite textului să se extindă */
+            }
+            .section2 .right li {
+                white-space: nowrap; /* Asigură că textul din listă rămâne pe un singur rând */
+            }
+            .section2 .right li a {
+                white-space: nowrap; /* Asigură că link-ul din listă nu se rupe pe mai multe rânduri */
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Indian Camping Nucșoara</h1>
-    <h2 id="subtitle">Pe urmele lui Miciu-Piciu</h2>
-    <div class="language-interface">
-        <div class="globe-icon-container">
-            <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
-            <div id="language-flags" class="language-flags">
-                <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
-                <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
-                <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
-            </div>
-        </div>
-    </div>
     <div class="logo-image">
         <img src="./Pandativ.jpeg" alt="Logo" class="logo" />
-    </div>    
+    </div>
+    <div class="globe-icon-container">
+        <img src="./glob 1.png" alt="Globe" class="globe-icon" onclick="toggleLanguages()" />
+        <div id="language-flags" class="language-flags">
+            <img src="./steag italia.png" alt="Italiano" id="flag-it" onclick="setLanguage('it')" />
+            <img src="./steag anglia.png" alt="English" id="flag-uk" onclick="setLanguage('en')" />
+            <img src="./steag romania.png" alt="Română" id="flag-ro" onclick="setLanguage('ro')" />
+        </div>
+    </div>
+    <div class="header-container">
+        <h1>Indian Camping Nucșoara</h1>
+        <h2 id="subtitle">Pe urmele lui Miciu-Piciu</h2>
+    </div>
+    <div class="language-interface">
+        <!-- Păstrăm acest container pentru compatibilitate, dar nu mai este necesar pentru glob -->
+    </div>
+     
     <div class="container">
         <div class="section1">
             <div class="right">
@@ -416,9 +448,8 @@
             <div class="right responsive">
                 <ul>
                     <li>
-                        <a href="./mesaj sacru.html" rel="noopener noreferrer" id="main-message" title="Deschide mesajul sacru!">
-                            <b>Mesaj Sacru de Bun-Venit în Tărâmul lui Miciu-Piciu</b>
-                        </a>
+                        <b><a href="./mesaj sacru.html" rel="noopener noreferrer" id="main-message" title="Deschide mesajul sacru!">
+                            Mesaj Sacru de Bun-Venit în Tărâmul lui Miciu-Piciu</a></b>
                     </li>
                 </ul>
             </div>
@@ -430,7 +461,7 @@
         }
     
         function setLanguage(lang) {
-            localStorage.setItem('selectedLanguage', lang); 
+            localStorage.setItem('selectedLanguage', lang);
     
             const messages = {
                 ro: {
@@ -438,7 +469,7 @@
                     subtitle: 'Pe urmele lui Miciu-Piciu',
                     activities: 'Activități',
                     about: 'Curiozități',
-                    miciu:'despre Miciu-Piciu',
+                    miciu: 'despre Miciu-Piciu',
                     gallery: 'Galerie foto',
                     memories: 'Construiește amintiri',
                     contact: 'Ne găsești aici'
@@ -448,7 +479,7 @@
                     subtitle: 'On the Trail of Miciu-Piciu',
                     activities: 'Activities',
                     about: 'Curiosities',
-                    miciu:'about Miciu-Piciu',
+                    miciu: 'about Miciu-Piciu',
                     gallery: 'Photo Gallery',
                     memories: 'Build Memories',
                     contact: 'Contact'
@@ -458,15 +489,13 @@
                     subtitle: 'Sulle tracce di Miciu-Piciu',
                     activities: 'Attività',
                     about: 'Aneddoti ',
-                    miciu:'su Miciu-Piciu',
+                    miciu: 'su Miciu-Piciu',
                     gallery: 'Galleria foto',
                     memories: 'Crea ricordi',
                     contact: 'Contatto'
                 }
             };
     
-            // Pas 3: Execută traducerile (aici este locul lor corect)
-            // Am adăugat verificări pentru a preveni erorile dacă un ID nu există
             if (document.getElementById('main-message')) document.getElementById('main-message').innerText = messages[lang].title;
             if (document.getElementById('subtitle')) document.getElementById('subtitle').innerText = messages[lang].subtitle;
             if (document.getElementById('menu-activities')) document.getElementById('menu-activities').innerText = messages[lang].activities;
@@ -476,15 +505,13 @@
             if (document.getElementById('menu-memories')) document.getElementById('menu-memories').innerText = messages[lang].memories;
             if (document.getElementById('menu-contact')) document.getElementById('menu-contact').innerText = messages[lang].contact;
     
-            // Ascunde steagurile
             document.getElementById('language-flags').classList.remove('visible');
         }
     
-        // --- La încărcarea paginii, citește limba salvată și aplic-o ---
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('selectedLanguage') || 'ro';
             setLanguage(savedLang);
         });
     </script>
-    </body>
-    </html>
+</body>
+</html>

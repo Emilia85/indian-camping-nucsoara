@@ -356,10 +356,19 @@
 
 @media (max-width: 550px) and (min-width: 401px) {
     .header-container {
-        margin-top: 75px; /* Tranziție lină pentru spațiu */
+        margin-top: 75px !important;/* Tranziție lină pentru spațiu */
     }
     .logo-image {
-        width: 70px; /* Dimensiune redusă, egală cu globul */
+        position: fixed !important;
+        top: 10px !important;
+        left: 7px !important;
+        z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
+        width: 60px !important; /* Dimensiune redusă pentru mobil */
+    }
+
+    /* Adaugă padding sus la containerul principal pentru a evita suprapunerea */
+    .container {
+        padding-top: 80px !important; /* Ajustează valoarea după nevoie */
     }
     .globe-icon {
         width: 70px; /* Dimensiune redusă, egală cu pandativul */
@@ -392,30 +401,59 @@
         flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
     }
     /* Modificări pentru .section2 .right */
-    .section2 .right {
-        margin-top: 0 !important; /* Elimină marginea de sus */
-        align-self: flex-start; /* Aliniază la începutul containerului flex */
-        padding-top: 0; /* Elimină orice padding superior */
-        padding-left: 25px; /* Adaugă spațiu pentru a preveni suprapunerea bulinei cu textul */
-    }
-    .section2 .right li {
-        padding-top: 0; /* Elimină spațiul de sus al textului */
-        margin-top: 0; /* Elimină marginea de sus */
-        padding-left: 15px; /* Adaugă spațiu în stânga textului pentru a preveni suprapunerea cu bulina */
-    }
-    .section2 .right li::before {
-        left: -20px; /* Ajustează poziția bulinei mai în stânga, dar nu foarte aproape de poză */
-        top: 15px !important; /* Mută bulina mai sus (ajustează valoarea după nevoie) */
-        transform: translateY(0); /* Anulează transformarea verticală */
-    }
+    .section2 {
+                align-items: flex-start; /* Aliniază elementele la început (sus) */
+                gap: 10px; /* Spațiu mai mic între poza și text */
+            }
+            
+            .section2 .right {
+                margin-top: 0;
+                padding-top: 0;
+                padding-left: 20px; /* Spațiu optimizat între poza și text */
+                align-self: flex-start; /* Aliniază textul cu partea de sus a pozei */
+            }
+            
+            .section2 .right li {
+                padding-left: 15px;
+                margin-top: 0;
+                padding-top: 0;
+                position: relative;
+            }
+            
+            .section2 .right li::before {
+                left: -18px; /* Bulina mai aproape de text */
+                top: 12px !important; /* Pozitie verticală ajustată */
+                transform: none;
+                font-size: 1em; /* Dimensiune redusă a bulinei */
+            }
+            
+            /* Ajustări fine pentru aliniere perfectă */
+            .section2 .left {
+                margin-right: 0;
+                padding-right: 0;
+            }
+            
+            .section2 .left img {
+                max-height: 120px; /* Control înălțime poza dacă e necesar */
+                width: auto;
+            }
 }
 
 @media (max-width: 400px) {
     .header-container {
-        margin-top: 70px; /* Spațiu ajustat pentru ecrane foarte mici */
+        margin-top: 70px !important; /* Spațiu ajustat pentru ecrane foarte mici */
     }
     .logo-image {
-        width: 60px; /* Dimensiune mică, egală cu globul */
+        position: fixed !important;
+        top: 10px !important;
+        left: 7px !important;
+        z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
+        width: 60px !important; /* Dimensiune redusă pentru mobil */
+    }
+
+    /* Adaugă padding sus la containerul principal pentru a evita suprapunerea */
+    .container {
+        padding-top: 80px !important; /* Ajustează valoarea după nevoie */
     }
     .globe-icon {
         width: 60px; /* Dimensiune mică, egală cu pandativul */
@@ -448,25 +486,60 @@
         flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
     }
     /* Modificări pentru .section2 .right */
-    .section2 .right {
-        margin-top: 0 !important; /* Elimină marginea de sus */
-        align-self: flex-start; /* Aliniază la începutul containerului flex */
-        padding-top: 0; /* Elimină orice padding superior */
-        padding-left: 25px; /* Adaugă spațiu pentru a preveni suprapunerea bulinei cu textul */
-    }
-    .section2 .right li {
-        padding-top: 0; /* Elimină spațiul de sus al textului */
-        margin-top: 0; /* Elimină marginea de sus */
-        padding-left: 15px; /* Adaugă spațiu în stânga textului pentru a preveni suprapunerea cu bulina */
-    }
-    .section2 .right li::before {
-        left: -20px; /* Ajustează poziția bulinei mai în stânga, dar nu foarte aproape de poză */
-        top: 15px !important; /* Mută bulina mai sus (ajustează valoarea după nevoie) */
-        transform: translateY(0); /* Anulează transformarea verticală */
-    }
+    .section2 {
+                align-items: flex-start; /* Aliniază elementele la început (sus) */
+                gap: 10px; /* Spațiu mai mic între poza și text */
+            }
+            
+            .section2 .right {
+                margin-top: 0;
+                padding-top: 0;
+                padding-left: 20px; /* Spațiu optimizat între poza și text */
+                align-self: flex-start; /* Aliniază textul cu partea de sus a pozei */
+            }
+            
+            .section2 .right li {
+                padding-left: 15px;
+                margin-top: 0;
+                padding-top: 0;
+                position: relative;
+            }
+            
+            .section2 .right li::before {
+                left: -18px; /* Bulina mai aproape de text */
+                top: 12px !important; /* Pozitie verticală ajustată */
+                transform: none;
+                font-size: 1em; /* Dimensiune redusă a bulinei */
+            }
+            
+            /* Ajustări fine pentru aliniere perfectă */
+            .section2 .left {
+                margin-right: 0;
+                padding-right: 0;
+            }
+            
+            .section2 .left img {
+                max-height: 120px; /* Control înălțime poza dacă e necesar */
+                width: auto;
+            }
 }
 
 @media (max-width: 662px) {
+    .header-container {
+        margin-top: 70px !important; /* Spațiu ajustat pentru ecrane foarte mici */
+    }
+    .logo-image {
+        position: fixed !important;
+        top: 10px !important;
+        left: 7px !important;
+        z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
+        width: 60px !important; /* Dimensiune redusă pentru mobil */
+    }
+
+    /* Adaugă padding sus la containerul principal pentru a evita suprapunerea */
+    .container {
+        padding-top: 80px !important; /* Ajustează valoarea după nevoie */
+    }
     .section1 {
         display: flex;
         flex-direction: row-reverse; /* Menține poza în dreapta și textul în stânga */
@@ -499,22 +572,42 @@
         flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
     }
     /* Modificări pentru .section2 .right */
-    .section2 .right {
-        margin-top: 0 !important; /* Elimină marginea de sus */
-        align-self: flex-start; /* Aliniază la începutul containerului flex */
-        padding-top: 0; /* Elimină orice padding superior */
-        padding-left: 25px; /* Adaugă spațiu pentru a preveni suprapunerea bulinei cu textul */
-    }
-    .section2 .right li {
-        padding-top: 0; /* Elimină spațiul de sus al textului */
-        margin-top: 0; /* Elimină marginea de sus */
-        padding-left: 15px; /* Adaugă spațiu în stânga textului pentru a preveni suprapunerea cu bulina */
-    }
-    .section2 .right li::before {
-        left: -20px; /* Ajustează poziția bulinei mai în stânga, dar nu foarte aproape de poză */
-        top: 15px !important; /* Mută bulina mai sus (ajustează valoarea după nevoie) */
-        transform: translateY(0); /* Anulează transformarea verticală */
-    }
+    .section2 {
+                align-items: flex-start; /* Aliniază elementele la început (sus) */
+                gap: 10px; /* Spațiu mai mic între poza și text */
+            }
+            
+            .section2 .right {
+                margin-top: 0;
+                padding-top: 0;
+                padding-left: 20px; /* Spațiu optimizat între poza și text */
+                align-self: flex-start; /* Aliniază textul cu partea de sus a pozei */
+            }
+            
+            .section2 .right li {
+                padding-left: 15px;
+                margin-top: 0;
+                padding-top: 0;
+                position: relative;
+            }
+            
+            .section2 .right li::before {
+                left: -18px; /* Bulina mai aproape de text */
+                top: 12px !important; /* Pozitie verticală ajustată */
+                transform: none;
+                font-size: 1em; /* Dimensiune redusă a bulinei */
+            }
+            
+            /* Ajustări fine pentru aliniere perfectă */
+            .section2 .left {
+                margin-right: 0;
+                padding-right: 0;
+            }
+            
+            .section2 .left img {
+                max-height: 120px; /* Control înălțime poza dacă e necesar */
+                width: auto;
+            }
 }
         
         @media (min-width: 900px) {

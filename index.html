@@ -48,7 +48,7 @@
             position: fixed;
             top: 10px;
             left: 7px;
-            z-index: 100;
+            z-index: 1;
             width: 75px; /* Dimensiune egală cu globul pe desktop */
             height: auto;
             padding: 0;
@@ -403,25 +403,26 @@
     /* Modificări pentru .section2 .right */
     .section2 {
                 align-items: flex-start; /* Aliniază elementele la început (sus) */
-                gap: 10px; /* Spațiu mai mic între poza și text */
+                gap: 5px; /* Spațiu mai mic între poza și text */
             }
             
             .section2 .right {
                 margin-top: 0;
                 padding-top: 0;
-                padding-left: 20px; /* Spațiu optimizat între poza și text */
-                align-self: flex-start; /* Aliniază textul cu partea de sus a pozei */
+                padding-left: 10px; /* Redus de la 20px la 10px */
+                margin-left: -5px; /* Mută tot containerul mai în stânga */
+                align-self: flex-start;
             }
             
             .section2 .right li {
-                padding-left: 15px;
+                padding-left: 5px;
                 margin-top: 0;
                 padding-top: 0;
                 position: relative;
             }
             
             .section2 .right li::before {
-                left: -18px; /* Bulina mai aproape de text */
+                left: -10px; /* Bulina mai aproape de text */
                 top: 12px !important; /* Pozitie verticală ajustată */
                 transform: none;
                 font-size: 1em; /* Dimensiune redusă a bulinei */
@@ -434,8 +435,8 @@
             }
             
             .section2 .left img {
-                max-height: 120px; /* Control înălțime poza dacă e necesar */
-                width: auto;
+                max-height: none; /* Control înălțime poza dacă e necesar */
+                width: 100%;
             }
 }
 
@@ -488,25 +489,26 @@
     /* Modificări pentru .section2 .right */
     .section2 {
                 align-items: flex-start; /* Aliniază elementele la început (sus) */
-                gap: 10px; /* Spațiu mai mic între poza și text */
+                gap: 5px; /* Spațiu mai mic între poza și text */
             }
             
             .section2 .right {
                 margin-top: 0;
                 padding-top: 0;
-                padding-left: 20px; /* Spațiu optimizat între poza și text */
-                align-self: flex-start; /* Aliniază textul cu partea de sus a pozei */
+                padding-left: 10px; /* Redus de la 20px la 10px */
+                margin-left: -5px; /* Mută tot containerul mai în stânga */
+                align-self: flex-start;
             }
             
             .section2 .right li {
-                padding-left: 15px;
+                padding-left: 5px;
                 margin-top: 0;
                 padding-top: 0;
                 position: relative;
             }
             
             .section2 .right li::before {
-                left: -18px; /* Bulina mai aproape de text */
+                left: -10px; /* Bulina mai aproape de text */
                 top: 12px !important; /* Pozitie verticală ajustată */
                 transform: none;
                 font-size: 1em; /* Dimensiune redusă a bulinei */
@@ -519,8 +521,8 @@
             }
             
             .section2 .left img {
-                max-height: 120px; /* Control înălțime poza dacă e necesar */
-                width: auto;
+                max-height: none; /* Control înălțime poza dacă e necesar */
+                width: 100%;
             }
 }
 
@@ -572,27 +574,28 @@
         flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
     }
     /* Modificări pentru .section2 .right */
-    .section2 {
+            .section2 {
                 align-items: flex-start; /* Aliniază elementele la început (sus) */
-                gap: 10px; /* Spațiu mai mic între poza și text */
+                gap: 5px; /* Spațiu mai mic între poza și text */
             }
             
             .section2 .right {
                 margin-top: 0;
                 padding-top: 0;
-                padding-left: 20px; /* Spațiu optimizat între poza și text */
-                align-self: flex-start; /* Aliniază textul cu partea de sus a pozei */
+                padding-left: 10px; /* Redus de la 20px la 10px */
+                margin-left: -5px; /* Mută tot containerul mai în stânga */
+                align-self: flex-start;
             }
             
             .section2 .right li {
-                padding-left: 15px;
+                padding-left: 5px;
                 margin-top: 0;
                 padding-top: 0;
                 position: relative;
             }
             
             .section2 .right li::before {
-                left: -18px; /* Bulina mai aproape de text */
+                left: -10px; /* Bulina mai aproape de text */
                 top: 12px !important; /* Pozitie verticală ajustată */
                 transform: none;
                 font-size: 1em; /* Dimensiune redusă a bulinei */
@@ -605,8 +608,8 @@
             }
             
             .section2 .left img {
-                max-height: 120px; /* Control înălțime poza dacă e necesar */
-                width: auto;
+                max-height: none; /* Control înălțime poza dacă e necesar */
+                width: 100%;
             }
 }
         

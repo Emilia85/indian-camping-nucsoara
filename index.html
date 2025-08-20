@@ -237,6 +237,10 @@
             .header-container {
                 margin-top: 80px; /* Mai mult spațiu pentru logo și glob mai mari */
             }
+            .logo-image {
+                width: 50px; 
+                z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
+            }
             .row {
                 display: flex;
                 align-items: center;
@@ -440,7 +444,7 @@
                 max-height: none; /* Control înălțime poza dacă e necesar */
                 width: 100%;
             }
-}
+        }
 
         @media (max-width: 400px) {
             .header-container {
@@ -625,6 +629,10 @@
             }
             .section2 .right li a {
                 white-space: nowrap; /* Asigură că link-ul din listă nu se rupe pe mai multe rânduri */
+            }
+            .logo-image {
+                width: 50px; 
+                z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
             }
         }
     </style>

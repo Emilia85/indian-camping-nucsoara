@@ -38,7 +38,7 @@
             justify-content: center;
             width: 100%;
             max-width: 1000px;
-            margin: 100px auto 0; /* Spațiu pentru logo și glob */
+            margin: 80px auto 0; /* Spațiu pentru logo și glob */
             padding: 20px;
             background: white;
             position: relative;
@@ -49,7 +49,7 @@
             top: 10px;
             left: 7px;
             z-index: 1;
-            width: 180px; /* Dimensiune egală cu globul pe desktop */
+            width: 110px; /* Dimensiune egală cu globul pe desktop */
             height: auto;
             padding: 0;
             margin: 0;
@@ -238,7 +238,7 @@
                 margin-top: 80px; /* Mai mult spațiu pentru logo și glob mai mari */
             }
             .logo-image {
-                width: 50px; 
+                width: 90px; 
                 z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
             }
             .row {
@@ -280,7 +280,7 @@
                 margin-top: 85px; /* Tranziție lină pentru spațiu */
             }
             .logo-image {
-                width: 50px; 
+                width: 90px; 
                 z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
             }
             
@@ -627,6 +627,24 @@
             .logo-image {
                 width: 50px; 
                 z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
+            }
+        }
+        @media (min-width: 850px) and (max-width: 899px) {
+            .logo-image {
+                width: 70px;
+                z-index: 100 !important;
+            }
+        }
+        @media (min-width: 701px) and (max-width: 849px) {
+            .logo-image {
+                width: 60px;
+                z-index: 100 !important;
+            }
+        }
+        @media (min-width: 900px) and (max-width: 2240px) {
+            .logo-image {
+                width: 70px;
+                z-index: 100 !important;
             }
         }
     </style>

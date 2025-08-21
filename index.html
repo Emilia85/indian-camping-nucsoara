@@ -408,12 +408,12 @@
             }
             /* Modificări pentru .section2 .right */
             .section2 {
-                        align-items: flex-start; /* Aliniază elementele la început (sus) */
-                        gap: 3px; /* Spațiu mai mic între poza și text */
-                    }
+                align-items: flex-start; /* Aliniază elementele la început (sus) */
+                gap: 3px; /* Spațiu mai mic între poza și text */
+            }
             
             .section2 .right {
-                margin-top: -25px;
+                margin-top: -40px;
                 padding-top: 0;
                 padding-left: 0; 
                 margin-left: -15px; /* Mută tot containerul mai în stânga */
@@ -499,7 +499,7 @@
             }
                     
             .section2 .right {
-                margin-top: -25px;
+                margin-top: -40px;
                 padding-top: 0;
                 padding-left: 3px; 
                 margin-left: -15px; /* Mută tot containerul mai în stânga */
@@ -580,60 +580,54 @@
             flex: 1.2; /* Oferă un pic mai mult spațiu pozei */
         }
         /* Modificări pentru .section2 .right */
-            .section2 {
-                align-items: flex-start; /* Aliniază elementele la început (sus) */
-                gap: 3px; /* Spațiu mai mic între poza și text */
-            }
-            
-            .section2 .right {
-                margin-top: -25px;
-                padding-top: 0;
-                padding-left: 3px; 
-                margin-left: -15px; /* Mută tot containerul mai în stânga */
-                align-self: flex-start;
-            }
-            
-            .section2 .right li {
-                padding-left: 3px;
-                margin-top: 0;
-                padding-top: 0;
-                position: relative;
-            }
-            
-            .section2 .right li::before {
-                left: -20px; /* Bulina mai aproape de text */
-                top: 5px !important; /* Pozitie verticală ajustată */
-                transform: none;
-                font-size: 1.5em; /* Dimensiune redusă a bulinei */
-            }
-            
-            /* Ajustări fine pentru aliniere perfectă */
-            .section2 .left {
-                margin-right: 0;
-                padding-right: 0;
-            }
-            
-            .section2 .left img {
-                max-height: none; /* Control înălțime poza dacă e necesar */
-                width: 100%;
-            }
+        .section2 {
+            align-items: flex-start; /* Aliniază elementele la început (sus) */
+            gap: 3px; /* Spațiu mai mic între poza și text */
+        }
+        .section2 .right {
+            margin-top: -40px;
+            padding-top: 0;
+            padding-left: 3px; 
+            margin-left: -15px; /* Mută tot containerul mai în stânga */
+            align-self: flex-start;
+        } 
+        .section2 .right li {
+            padding-left: 3px;
+            margin-top: 0;
+            padding-top: 0;
+            position: relative;
+        }  
+        .section2 .right li::before {
+            left: -20px; /* Bulina mai aproape de text */
+            top: 5px !important; /* Pozitie verticală ajustată */
+            transform: none;
+            font-size: 1.5em; /* Dimensiune redusă a bulinei */
+        } 
+        .section2 .left {
+            margin-right: 0;
+            padding-right: 0;
+        }   
+        .section2 .left img {
+            max-height: none; /* Control înălțime poza dacă e necesar */
+            width: 100%;
+        }
         }
         
         @media (min-width: 900px) {
-            .section2 .right {
-                white-space: nowrap; /* Forțează textul să rămână pe un singur rând */
-                max-width: none; /* Elimină restricția de lățime pentru a permite textului să se extindă */
-            }
-            .section2 .right li {
-                white-space: nowrap; /* Asigură că textul din listă rămâne pe un singur rând */
-            }
-            .section2 .right li a {
-                white-space: nowrap; /* Asigură că link-ul din listă nu se rupe pe mai multe rânduri */
-            }
-            .logo-image {
-                width: 50px; 
-                z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
-            }
+        .section2 .right {
+            white-space: nowrap; /* Forțează textul să rămână pe un singur rând */
+            max-width: none; /* Elimină restricția de lățime pentru a permite textului să se extindă */
+        }
+        .section2 .right li {
+            white-space: nowrap; /* Asigură că textul din listă rămâne pe un singur rând */
+        }
+        .section2 .right li a {
+            white-space: nowrap; /* Asigură că link-ul din listă nu se rupe pe mai multe rânduri */
+        }
+        .logo-image {
+            width: 50px; 
+            z-index: 1000 !important; /* Asigură-te că e deasupra altor elemente */
+        }
         }
     </style>
 </head>
